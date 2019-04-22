@@ -24,4 +24,7 @@ public class DadosCliente {
     public void receberDadosLoja(Cliente cliente1) {
         clientes.add(cliente1);
     }
+    public void alterarDados(int i, Cliente cliente) {
+		clientes.set(i, cliente);
+	}
 }

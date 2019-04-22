@@ -15,7 +15,9 @@ public class ClienteApresentacao {
     public NegocioCliente negociocliente = new NegocioCliente();
     public NegocioCartao negociocartao = new NegocioCartao();
     public NegocioEndereco negocioendereco = new NegocioEndereco();
+    private int i;
 
+    //sistema de cadastro de clientes
     public void CadastrarCliente() {
         System.out.println("*******************************Cadastrar Cliente*********************************\n");
         System.out.println("------------------------------Endereço------------------------------------------\n");
@@ -71,12 +73,17 @@ public class ClienteApresentacao {
         negociocliente.CadastroCliente(cliente);
     }
 
-    public void InterfaceDadosCliente() {
-        System.out.println("informe seu  CPF: ");
+    //
+    public void logarCliente() {
+    	System.out.println("informe seu  CPF: ");
         String cpf = sc.next();
         System.out.println("informe sua senha: ");
         String senha = sc.next();
-        int i = negociocliente.Verificarcliente(cpf, senha);
+         i = negociocliente.Verificarcliente(cpf, senha);
+	}
+    
+    //obter dados do cliente
+    public void InterfaceDadosCliente() {
         System.out.println("*******************************************Dados do Cliente************************************\n");
         System.out.println("Nome: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getNome() + "\n"
                 + "Data de Nascimento: " + Util.formatarDataNascimento(negociocliente.getDadoscliente().lerDadosCliente().get(i).getData()) + "\n"
@@ -105,16 +112,9 @@ public class ClienteApresentacao {
             }
         }
     }
-
+    
+    //alterar dados do cliente
     public void AlterarDados() {
-        System.out.println("informe seu  CPF: ");
-        String cpf = sc.next();
-        System.out.println("informe sua senha: ");
-        String senha = sc.next();
-        int i = negociocliente.Verificarcliente(cpf, senha);
-        System.out.println("*Alterar* dados Nome, Data de nascimento, Cpf ou Senha?");
-        String opBasico = sc.next().toLowerCase();
-        if (opBasico.equals("sim")) {
             System.out.println("\n----------------------------------Dados Cliente-----------------------------------");
             sc.nextLine();
             System.out.println("Nome: ");
@@ -122,17 +122,10 @@ public class ClienteApresentacao {
             System.out.println("Data de nascimento: ");
             String data = sc.next();
             System.out.println("CPF: ");
-            String cpf2 = sc.next();
+            String cpf = sc.next();
             System.out.println("Senha: ");
-            String senha2 = sc.next();
-            negociocliente.getDadoscliente().lerDadosCliente().get(i).setNome(nome);
-            negociocliente.getDadoscliente().lerDadosCliente().get(i).setData(data);
-            negociocliente.getDadoscliente().lerDadosCliente().get(i).setCpf(cpf2);
-            negociocliente.getDadoscliente().lerDadosCliente().get(i).setSenha(senha2);
-        }
-        System.out.println("*Alterar* endereço ?");
-        String opEndereço = sc.next().toLowerCase();
-        if (opEndereço.equals("sim")) {
+            String senha = sc.next();
+           
             System.out.println("------------------------------Endereço------------------------------------------\n");
             sc.nextLine();
             System.out.println("Lugadouro: ");
@@ -149,10 +142,10 @@ public class ClienteApresentacao {
             String cep = sc.next();
             negocioendereco.validarCEP(cep);
             Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
-            negociocliente.getDadoscliente().lerDadosCliente().get(i).setEndereco(endereco);
-        }
-        System.out.println("*Alterar* dados do cartão ?");
-        String opAltCartão = sc.next().toLowerCase();
+            
+            System.out.println("*Alterar* dados do cartão ?");
+            String opAltCartão = sc.next().toLowerCase();
+        
         if (opAltCartão.equals("sim")) {
             System.out.println("\n----------------------------------Dados Cartão-----------------------------------");
             System.out.println("Nome do Titular do Cartao: ");
@@ -169,7 +162,11 @@ public class ClienteApresentacao {
             System.out.println("Limite: ");
             double limite = sc.nextDouble();
             Cartao cartao = new Cartao(nometitular, numerocartao, datavalidade, codigoseguranca, limite);
-            negociocliente.getDadoscliente().lerDadosCliente().get(i).setCartao(cartao);
+            
+            negociocliente.alterarCliente(new Cliente(nome, cpf, data, cartao, endereco, senha), i);
+        }else {
+        	negociocliente.alterarCliente(new Cliente(nome, cpf, data, endereco, senha), i);
         }
+        
     }
 }

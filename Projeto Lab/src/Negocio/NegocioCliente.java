@@ -21,6 +21,11 @@ public class NegocioCliente {
         }
         return i;
     }
+    
+    public boolean alterarCliente(Cliente cliente, int i) {
+        dadoscliente.alterarDados(i, cliente);
+        return true;
+    }
 
     public DadosCliente getDadoscliente() {
         return dadoscliente;
