@@ -2,17 +2,28 @@ package Negocio;
 
 import java.util.Scanner;
 
+/*
+ * essa classe tem como o objetivo de validar os dados do endereço
+ * como: 
+ * 
+ * validar o cep
+ * 
+ */
+
 public class NegocioEndereco {
-	Scanner sc = new Scanner(System.in);
+	private Scanner sc = new Scanner(System.in);
+	
+	//validar cep
 	public void validarCEP(String cep) {
-		if (cep.length()!= 8) {
-			while (cep.length() != 8) {
+		boolean f = cep.matches("\\d{8}");
+		if (f == false) {
+			while (f == false) {
 				System.out.println("Numero do cep invalido, por favor digite corretamente: ");
 				cep = sc.next();
+				f = cep.matches("\\d{8}");
 			}
-		}else {
-			System.out.println("numero do cep valido.");
 		}
+			System.out.println("numero do cep valido.");
 	
 	}
 }

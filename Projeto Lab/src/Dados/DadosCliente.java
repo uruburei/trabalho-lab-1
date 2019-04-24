@@ -21,7 +21,7 @@ public class DadosCliente {
         clientes.add(new Cliente("pedro", "44498766255", "10031992", endereco, "okokokokok"));
         return clientes;
     }
-    public void receberDadosLoja(Cliente cliente1) {
+    public void receberDadosCliente(Cliente cliente1) {
         clientes.add(cliente1);
     }
     public void alterarDados(int i, Cliente cliente) {
