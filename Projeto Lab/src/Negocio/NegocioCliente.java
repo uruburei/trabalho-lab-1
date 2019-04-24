@@ -3,6 +3,15 @@ package Negocio;
 import Dados.DadosCliente;
 import Entidades.Cliente;
 
+/*
+ * essa classe tem como o objetivo de validar os dados do cliente
+ * como: 
+ * Numero do cartão
+ * validade do cartão
+ * codigo de segurança
+ * 
+ */
+
 public class NegocioCliente {
     private DadosCliente dadoscliente = new DadosCliente();
 

@@ -1,41 +1,57 @@
 package Negocio;
 import java.util.Scanner;
+/*
+ * essa classe tem como o objetivo de validar os dados obtidos do cartão
+ * como: 
+ * Numero do cartão
+ * validade do cartão
+ * codigo de segurança
+ * 
+ */
 
 public class NegocioCartao {
-	Scanner sc = new Scanner(System.in);
+	private Scanner sc = new Scanner(System.in);
+	
+	//metodo para validar o numero do cartão
 	public void validarNumero(String numerocartao) {
-		if (numerocartao.length()!= 16) {
-			while (numerocartao.length() != 16) {
+		boolean f = numerocartao.matches("\\d{4}");
+		if (f == false) {
+			while (f == false) {
 				System.out.println("Numero do cartao errado, por favor digite corretamente: ");
 				numerocartao = sc.next();
+				f = numerocartao.matches("\\d{4}");
 			}
-		}else {
-			System.out.println("numero do cartao valido.");
 		}
+			System.out.println("numero do cartao valido.");
+		
 
 	}
+	
+	//metodo para validar a data de validade
 	public void validarDatadeValidade(String s) {
-		if (s.length()!= 4) {
-			while (s.length() != 4) {
+		boolean f = s.matches("\\d{4}");
+		if (f == false ) {
+			while (f == false ) {
 				System.out.println("A validade do cartao esta errada, por favor digite corretamente: ");
 				s = sc.next();
+				f = s.matches("\\d{0,4}");
 			}
-		}else {
-			System.out.println("Data de validade do cartao esta valida.");
 		}
-
+		System.out.println("Data de validade do cartao esta valida.");
 	}
+	
+	//metodo para validar o codigo de seguranca
 	public void validarCodigoDeSeguranca(int codigodeseguranca) {
 		String s = Integer.toString(codigodeseguranca);
-		if (s.length()!= 3) {
-			while (s.length() != 3) {
+		boolean f = s.matches("\\d{3}");
+		if (f == false) {
+			while (f == false) {
 				System.out.println("O codido de segurança do cartao esta errado, por favor digite corretamente: ");
 				codigodeseguranca = sc.nextInt();
 				s = Integer.toString(codigodeseguranca);
+				f = s.matches("\\d{3}");
 			}
-		}else {
-			System.out.println("O codigo de segurança do cartao esta valido.");
 		}
-
+			System.out.println("O codigo de segurança do cartao esta valido.");
 	}
 }
