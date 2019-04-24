@@ -33,7 +33,7 @@ public class ClienteApresentacao {
         String estado = sc.next();
         System.out.println("CEP: ");
         String cep = sc.next();
-        negocioendereco.validarCEP(cep);
+        cep = negocioendereco.validarCEP(cep);//vai validar o cep e retornar corrigido
         Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
         System.out.println("\n----------------------------------Dados Cliente-----------------------------------");
         sc.nextLine();
@@ -55,13 +55,13 @@ public class ClienteApresentacao {
             String nometitular = sc.nextLine();
             System.out.println("Número do Cartão: ");
             String numerocartao = sc.next();
-            negociocartao.validarNumero(numerocartao);
+            numerocartao = negociocartao.validarNumero(numerocartao);//vai validar o numero e retornar corrigido
             System.out.println("data de validade: ");
             String datavalidade = sc.next();
-            negociocartao.validarDatadeValidade(datavalidade);
+            datavalidade = negociocartao.validarDatadeValidade(datavalidade);//vai validar a data e retornar corrigido
             System.out.println("código de segurança: ");
             int codigoseguranca = sc.nextInt();
-            negociocartao.validarCodigoDeSeguranca(codigoseguranca);
+            codigoseguranca = negociocartao.validarCodigoDeSeguranca(codigoseguranca);//vai validar o codigo e retornar corrigido
             System.out.println("Limite: ");
             double limite = sc.nextDouble();
             Cartao cartao = new Cartao(nometitular, numerocartao, datavalidade, codigoseguranca, limite);
@@ -140,7 +140,7 @@ public class ClienteApresentacao {
             String estado = sc.next();
             System.out.println("CEP: ");
             String cep = sc.next();
-            negocioendereco.validarCEP(cep);
+            cep=negocioendereco.validarCEP(cep);//vai validar o cep e retornar corrigido
             Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
             
             System.out.println("*Alterar* dados do cartão ?");
@@ -152,13 +152,13 @@ public class ClienteApresentacao {
             String nometitular = sc.nextLine();
             System.out.println("Número do Cartão: ");
             String numerocartao = sc.next();
-            negociocartao.validarNumero(numerocartao);
+            numerocartao=negociocartao.validarNumero(numerocartao);//vai validar o numero do cartão e retornar corrigido
             System.out.println("data de validade: ");
             String datavalidade = sc.next();
-            negociocartao.validarDatadeValidade(datavalidade);
+            datavalidade=negociocartao.validarDatadeValidade(datavalidade);//vai validar a data e retornar corrigido
             System.out.println("código de segurança: ");
             int codigoseguranca = sc.nextInt();
-            negociocartao.validarCodigoDeSeguranca(codigoseguranca);
+            codigoseguranca=negociocartao.validarCodigoDeSeguranca(codigoseguranca);//vai validar o codigo e retornar corrigido
             System.out.println("Limite: ");
             double limite = sc.nextDouble();
             Cartao cartao = new Cartao(nometitular, numerocartao, datavalidade, codigoseguranca, limite);

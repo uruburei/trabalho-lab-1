@@ -12,7 +12,8 @@ public class NegocioLoja {
 
 
 	public String validarCNPJ(String cnpj) {
-		while (cnpj.length() != 14) {
+		//vai validar o cnpj pra ver se n tem letras e é menor/maior  que 14,e retorna corrigido ex.(15748596325698)
+		while (!cnpj.matches("\\d{14}")) {
 			System.out.println("cnpj invalido, por favor digite corretamente: ");
 			cnpj = sc.next();
 		}
@@ -22,7 +23,8 @@ public class NegocioLoja {
 	}
 
 	public String validarDataCriacao(String datacriacao) {
-		while (datacriacao.length() != 8) {
+		//vai validar a data pra ver se n tem letras e tamanho 2/2/4 ex.(20/05/2000) e retorna corrigido
+		while (!datacriacao.matches("\\d{2}/\\d{2}/\\d{4}")) {
 			System.out.println("data invalida, por favor digite corretamente: ");
 			datacriacao = sc.next();
 		}
