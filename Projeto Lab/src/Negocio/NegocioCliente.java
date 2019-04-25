@@ -6,20 +6,23 @@ import Entidades.Cliente;
 /*
  * essa classe tem como o objetivo de validar os dados do cliente
  * como: 
- * Numero do cartão
- * validade do cartão
- * codigo de segurança
+ * validar criação de um novo cliente
+ * validadar altaração de dados dos clientes
+ * buscar cliente
+ * Validar remoção do cliente
  * 
  */
 
 public class NegocioCliente {
     private DadosCliente dadoscliente = new DadosCliente();
-
+    
+    //validar cadastro do cliente
     public boolean CadastroCliente(Cliente cliente) {
-        dadoscliente.receberDadosLoja(cliente);
+        dadoscliente.receberDadosCliente(cliente);
         return true;
     }
-
+    
+    //buscar cliente 
     public int Verificarcliente(String cpf, String senha) {
         int i;
         int size = dadoscliente.lerDadosCliente().size();
@@ -31,11 +34,12 @@ public class NegocioCliente {
         return i;
     }
     
+    //alterar dados do cliente
     public boolean alterarCliente(Cliente cliente, int i) {
         dadoscliente.alterarDados(i, cliente);
         return true;
     }
-
+    
     public DadosCliente getDadoscliente() {
         return dadoscliente;
     }
