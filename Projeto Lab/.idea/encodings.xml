@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/Apresentaçao/MenuCompras.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/Apresentaçao/Principal.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/Dados/DadosLoja.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/Negocio/NegocioCartao.java" charset="windows-1252" />

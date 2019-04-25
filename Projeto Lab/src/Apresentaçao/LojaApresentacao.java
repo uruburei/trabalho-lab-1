@@ -31,7 +31,7 @@ public class LojaApresentacao {
         String estado = sc.next();
         System.out.println("CEP: ");
         String cep = sc.next();
-        negocioendereco.validarCEP(cep);
+        cep = negocioendereco.validarCEP(cep);//O metodo vai validar o cep e retorna corrigido
 
         System.out.println("\n*************************Dados da Loja*************************************");
         sc.nextLine();
@@ -39,10 +39,10 @@ public class LojaApresentacao {
         String nome = sc.nextLine();
         System.out.println("informe o cnpj da loja: ");
         String cnpj = sc.next();
-        negocioloja.validarCNPJ(cnpj);
+        cnpj = negocioloja.validarCNPJ(cnpj);//O metodo vai validar o cnpj e retornar corrigido
         System.out.println("informe quando sua loja foi criada: ");
         String data = sc.next();
-        negocioloja.validarDataCriacao(data);
+        data = negocioloja.validarDataCriacao(data);//O metodo vai validar a data e retornar corrigido
         Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
         Loja loja = new Loja(nome, cnpj, data, endereco);
 
@@ -105,10 +105,10 @@ public class LojaApresentacao {
             String nome = sc.next();
             System.out.println("informe o cnpj da loja: ");
             String cnpj2 = sc.next();
-            negocioloja.validarCNPJ(cnpj2);
+            cnpj2 = negocioloja.validarCNPJ(cnpj2);//O metodo vai validar o cnpj e retornar corrigido
             System.out.println("informe quando sua loja foi criada: ");
             String data = sc.next();
-            negocioloja.validarDataCriacao(data);
+            data = negocioloja.validarDataCriacao(data);//o metodo vai validar a data e retornar corrigido
             negocioloja.getDadosLoja().lerDadosLoja().get(i).setNome(nome);
             negocioloja.getDadosLoja().lerDadosLoja().get(i).setCnpj(cnpj2);
             negocioloja.getDadosLoja().lerDadosLoja().get(i).setData(data);
@@ -130,7 +130,7 @@ public class LojaApresentacao {
             String estado = sc.next();
             System.out.println("CEP: ");
             String cep = sc.next();
-            negocioendereco.validarCEP(cep);
+            cep = negocioendereco.validarCEP(cep);//O metodo vai validar o cep e retornar corrigido
             Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
             negocioloja.getDadosLoja().lerDadosLoja().get(i).setEndereco(endereco);
         }
@@ -160,10 +160,10 @@ public class LojaApresentacao {
                 String nomef = sc.next();
                 System.out.println("cpf do funcionario: ");
                 String cpff = sc.next();
-                validarpessoa.validarCPF(cpff);
+                cpff = validarpessoa.validarCPF(cpff);//O metodo vai validar o cpf e retornar corrigido
                 System.out.println("informe a data de nascimento do funcionario: ");
                 String dataf = sc.next();
-                validarpessoa.validarDataNascimento(dataf);
+                dataf = validarpessoa.validarDataNascimento(dataf);//O metodo vai validar a data e retornar corrigido
                 System.out.println("informe o setor do funcionario: ");
                 String setorf = sc.next();
                 System.out.println("informe o salario bruto do funcionario: ");

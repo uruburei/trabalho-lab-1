@@ -10,16 +10,13 @@ import java.util.Scanner;
  */
 
 public class NegocioPessoa {
-	
-	private Scanner sc = new Scanner (System.in);
-	
-	//validar cpf
-	public void validarCPF(String cpf) {
-		boolean f = cpf.matches("\\d{11}");
-		while (f == false) {
+	Scanner sc = new Scanner (System.in);
+  
+  //vai validar o cpf e verificar se n tem letras e tem mais/menos que 11 de tamanho e retorna corrigido
+	public String validarCPF(String cpf) {
+		while (!cpf.matches("\\d{11}")) {
 			System.out.println("cpf invalido, por favor digite corretamente: ");
 			cpf = sc.next();
-			f = cpf.matches("\\d{11}");
 		}
 		System.out.println("cpf valido!");
 	}
@@ -29,13 +26,11 @@ public class NegocioPessoa {
 		int data;
 		data = Integer.parseInt(datanascimento.substring(4, 8));
 		data = 2018 - data;
-		boolean f = datanascimento.matches("\\d{8}");
-		while (datanascimento.length() != 8 && data< 18) {
+		while (!datanascimento.matches("\\d{8}") && data< 18)) {
 			System.out.println("data de nascimento invalida, por favor digite corretamente: ");
 			datanascimento = sc.next();
 			data = Integer.parseInt(datanascimento.substring(4, 8));
 			data = 2018 - data;
-			f = datanascimento.matches("\\d{8}");
 		}
 		System.out.println("data de nascimento valida!");
 	}

@@ -3,7 +3,7 @@ package Negocio;
 import java.util.Scanner;
 
 /*
- * essa classe tem como o objetivo de validar os dados do endere�o
+ * essa classe tem como o objetivo de validar os dados do endereço
  * como: 
  * 
  * validar o cep
@@ -11,19 +11,15 @@ import java.util.Scanner;
  */
 
 public class NegocioEndereco {
-	private Scanner sc = new Scanner(System.in);
-	
-	//validar cep
-	public void validarCEP(String cep) {
-		boolean f = cep.matches("\\d{8}");
-		if (f == false) {
-			while (f == false) {
+	Scanner sc = new Scanner(System.in);
+  
+	//vai verificar se o cep nÃ£o tem letras e se tem tamanho 8 ex.(50060070) e retorna corrigido
+	public String validarCEP(String cep) {
+			while (!cep.matches("\\d{8}")) {
 				System.out.println("Numero do cep invalido, por favor digite corretamente: ");
 				cep = sc.next();
-				f = cep.matches("\\d{8}");
 			}
-		}
 			System.out.println("numero do cep valido.");
-	
+			return cep;
 	}
 }
