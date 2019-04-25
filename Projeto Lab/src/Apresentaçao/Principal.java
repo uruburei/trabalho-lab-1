@@ -1,5 +1,5 @@
 package Apresentaçao;
-//teste
+
 import Dados.DadosLoja;
 import Negocio.NegocioCliente;
 import Negocio.NegocioLoja;
