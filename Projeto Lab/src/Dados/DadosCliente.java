@@ -24,7 +24,10 @@ public class DadosCliente {
     public void receberDadosCliente(Cliente cliente1) {
         clientes.add(cliente1);
     }
-    public void alterarDados(int i, Cliente cliente) {
+    public void alterarDadosCliente(int i, Cliente cliente) {
 		clientes.set(i, cliente);
 	}
+	public void removerDadosCliente(int i){
+        clientes.remove(i);
+    }
 }

@@ -47,4 +47,10 @@ public class DadosLoja {
     public void receberDadosLoja(Loja loja1) {
         lojas.add(loja1);
     }
+    public void alterarDadosLoja(int i, Loja loja) {
+        lojas.set(i, loja);
+    }
+    public void removerDadosLoja(int i){
+        lojas.remove(i);
+    }
 }

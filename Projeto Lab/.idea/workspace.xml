@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" line="137" />
+    <bookmark url="file://$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" line="126" />
     <bookmark url="file://$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java" line="36" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc377299-719b-4fb8-a295-1bfd1ee81cf5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Apresentaçao/ClienteApresentacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Apresentaçao/ClienteApresentacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Apresentaçao/LojaApresentacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Apresentaçao/LojaApresentacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Apresentaçao/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Apresentaçao/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Dados/DadosCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dados/DadosCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Dados/DadosLoja.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dados/DadosLoja.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Cartao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Cartao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Endereco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Entregador.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Entregador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Funcionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Loja.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Loja.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Pessoa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Entidades/Produtoo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Produtoo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Negocio/NegocioCartao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Negocio/NegocioCartao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Negocio/NegocioCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Negocio/NegocioCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Negocio/NegocioEndereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Negocio/NegocioEndereco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Negocio/NegocioLoja.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Negocio/NegocioLoja.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Negocio/NegocioPessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Negocio/NegocioPessoa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Util/Util.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Negocio/NegocioCartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Negocio/NegocioCartao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Negocio/NegocioEndereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Negocio/NegocioEndereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dados/DadosCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dados/DadosCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dados/DadosLoja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dados/DadosLoja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Negocio/NegocioCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Negocio/NegocioCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Negocio/NegocioLoja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Negocio/NegocioLoja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Negocio/NegocioPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Negocio/NegocioPessoa.java" afterDir="false" />
     </list>
@@ -28,7 +48,29 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Apresentaçao/Principal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Apresentaçao/MenuCompras.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,18 +103,18 @@
         <option value="$PROJECT_DIR$/src/Entidades/Funcionario.java" />
         <option value="$PROJECT_DIR$/src/Entidades/Entregador.java" />
         <option value="$PROJECT_DIR$/src/Entidades/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/Negocio/NegocioCliente.java" />
         <option value="$PROJECT_DIR$/src/Apresentaçao/Main.java" />
         <option value="$PROJECT_DIR$/src/Entidades/Loja.java" />
+        <option value="$PROJECT_DIR$/src/Negocio/NegocioEndereco.java" />
+        <option value="$PROJECT_DIR$/src/Negocio/NegocioCartao.java" />
         <option value="$PROJECT_DIR$/src/Dados/DadosLoja.java" />
         <option value="$PROJECT_DIR$/src/Dados/DadosCliente.java" />
-        <option value="$PROJECT_DIR$/src/Apresentaçao/Principal.java" />
-        <option value="$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" />
-        <option value="$PROJECT_DIR$/src/Negocio/NegocioPessoa.java" />
-        <option value="$PROJECT_DIR$/src/Negocio/NegocioEndereco.java" />
+        <option value="$PROJECT_DIR$/src/Negocio/NegocioCliente.java" />
         <option value="$PROJECT_DIR$/src/Negocio/NegocioLoja.java" />
-        <option value="$PROJECT_DIR$/src/Negocio/NegocioCartao.java" />
+        <option value="$PROJECT_DIR$/src/Negocio/NegocioPessoa.java" />
         <option value="$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java" />
+        <option value="$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" />
+        <option value="$PROJECT_DIR$/src/Apresentaçao/Principal.java" />
       </list>
     </option>
   </component>
@@ -86,7 +128,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,6 +150,18 @@
               <item name="Projeto Lab" type="b2602c69:ProjectViewProjectNode" />
               <item name="Projeto Lab" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Dados" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto Lab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto Lab" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entidades" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projeto Lab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projeto Lab" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Negocio" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -116,11 +169,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projeto Lab - Cópia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,6 +251,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="748" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -290,16 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entidades/Loja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-          <folding>
-            <element signature="e#348#361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entidades/Cartao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -311,27 +356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dados/DadosLoja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="42" column="57" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dados/DadosCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1201#1202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Util/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -339,55 +363,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioLoja.java">
+    <entry file="file://$PROJECT_DIR$/src/Dados/DadosCliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="25" column="104" selection-start-line="25" selection-start-column="104" selection-end-line="25" selection-end-column="104" />
+        <state relative-caret-position="394">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#207#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioCartao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioEndereco.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="100" selection-start-line="7" selection-start-column="100" selection-end-line="7" selection-end-column="100" />
+        <state relative-caret-position="253">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioPessoa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        <state relative-caret-position="720">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioCliente.java">
+    <entry file="file://$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state relative-caret-position="1909">
+          <caret line="176" column="43" selection-start-line="176" selection-start-column="43" selection-end-line="176" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dados/DadosLoja.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#lerDadosLoja#0;class#DadosLoja#0" />
+            <element signature="e#2258#2259#0" expanded="true" />
+            <element signature="e#2292#2293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2500">
+          <caret line="125" column="63" lean-forward="true" selection-start-line="125" selection-start-column="63" selection-end-line="125" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java">
+    <entry file="file://$PROJECT_DIR$/src/Entidades/Loja.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="37" />
+        <state relative-caret-position="199">
+          <caret line="23" column="68" lean-forward="true" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
+          <folding>
+            <element signature="e#1547#1548#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioCartao.java">
+    <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioLoja.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
+        <state relative-caret-position="1200">
+          <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+          <folding>
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1913#1914#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java">
+    <entry file="file://$PROJECT_DIR$/src/Negocio/NegocioCliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="165" column="117" lean-forward="true" selection-start-line="165" selection-start-column="117" selection-end-line="165" selection-end-column="117" />
+        <state relative-caret-position="300">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -403,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Apresentaçao/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-325">
-          <caret line="90" column="50" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
+        <state>
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

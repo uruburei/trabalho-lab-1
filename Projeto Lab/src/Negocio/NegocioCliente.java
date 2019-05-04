@@ -36,7 +36,13 @@ public class NegocioCliente {
     
     //alterar dados do cliente
     public boolean alterarCliente(Cliente cliente, int i) {
-        dadoscliente.alterarDados(i, cliente);
+        dadoscliente.alterarDadosCliente(i, cliente);
+        return true;
+    }
+
+    //remover dados do cliente
+    public boolean removerCliente(int i){
+        dadoscliente.removerDadosCliente(i);
         return true;
     }
     

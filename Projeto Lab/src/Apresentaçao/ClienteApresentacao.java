@@ -70,16 +70,17 @@ public class ClienteApresentacao {
         } else {
             cliente = new Cliente(nome, cpf, data, endereco, senha);
         }
-        negociocliente.CadastroCliente(cliente);
+        negociocliente.CadastroCliente(cliente);//Vai criar o Cliente
     }
 
     //
-    public void logarCliente() {
+    public int logarCliente() {
     	System.out.println("informe seu  CPF: ");
         String cpf = sc.next();
         System.out.println("informe sua senha: ");
         String senha = sc.next();
-         i = negociocliente.Verificarcliente(cpf, senha);
+        i = negociocliente.Verificarcliente(cpf, senha);
+        return i;
 	}
     
     //obter dados do cliente
@@ -167,6 +168,15 @@ public class ClienteApresentacao {
         }else {
         	negociocliente.alterarCliente(new Cliente(nome, cpf, data, endereco, senha), i);
         }
-        
+    }
+    public void removerDados(){
+        int j = logarCliente();
+        System.out.println("*Deseja deletar conta ? s/n");
+        String escolha = sc.next();
+        if (escolha.equals("s")){
+            negociocliente.removerCliente(j);
+        }else{
+            System.out.println("Cancelando operação");
+        }
     }
 }
