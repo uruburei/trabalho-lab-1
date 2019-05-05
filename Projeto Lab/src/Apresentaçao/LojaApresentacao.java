@@ -55,9 +55,7 @@ public class LojaApresentacao {
         loja = new Loja(nome, cnpj, data, endereco,produtoos,funcionarios);
 
         //negocioloja.CadstrarLoja(loja);
-        if (negocioloja.CadstrarLoja(loja) == true) {
-            System.out.println("loja cadastrada!");
-        }
+        negocioloja.CadstrarLoja(loja);
     }
 
     public int logarLoja() {

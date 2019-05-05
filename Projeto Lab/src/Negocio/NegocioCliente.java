@@ -23,15 +23,18 @@ public class NegocioCliente {
     }
     
     //buscar cliente 
-    public int Verificarcliente(String cpf, String senha) {
-        int i;
+    public String Verificarcliente(String cpf, String senha) {
+        String j = "";
         int size = dadoscliente.lerDadosCliente().size();
-        for (i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (cpf.equals(dadoscliente.lerDadosCliente().get(i).getCpf()) && senha.equals(dadoscliente.lerDadosCliente().get(i).getSenha())) {
+                j = Integer.toString(i);
                 break;
+            }else {
+                j =null;
             }
         }
-        return i;
+        return j;
     }
     
     //alterar dados do cliente

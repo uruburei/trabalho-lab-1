@@ -3,9 +3,7 @@ package Apresentaçao;
 import Entidades.Cartao;
 import Entidades.Cliente;
 import Entidades.Endereco;
-import Negocio.NegocioCartao;
-import Negocio.NegocioCliente;
-import Negocio.NegocioEndereco;
+import Negocio.*;
 import Util.Util;
 
 import java.util.Scanner;
@@ -15,6 +13,8 @@ public class ClienteApresentacao {
     public NegocioCliente negociocliente = new NegocioCliente();
     public NegocioCartao negociocartao = new NegocioCartao();
     public NegocioEndereco negocioendereco = new NegocioEndereco();
+    public NegocioPessoa negociopessoa = new NegocioPessoa();
+    public NegocioLoja negocioloja = new NegocioLoja();
     private int i;
 
     //sistema de cadastro de clientes
@@ -40,9 +40,9 @@ public class ClienteApresentacao {
         System.out.println("Nome: ");
         String nome = sc.nextLine();
         System.out.println("Data de nascimento: ");
-        String data = sc.next();
+        String data = negociopessoa.validarDataNascimento(sc.next());
         System.out.println("CPF: ");
-        String cpf = sc.next();
+        String cpf = negociopessoa.validarCPF(sc.next());
         System.out.println("Senha: ");
         String senha = sc.next();
         System.out.println("deseja cadastrar o cartão? ");
@@ -71,6 +71,7 @@ public class ClienteApresentacao {
             cliente = new Cliente(nome, cpf, data, endereco, senha);
         }
         negociocliente.CadastroCliente(cliente);//Vai criar o Cliente
+
     }
 
     //
@@ -79,8 +80,15 @@ public class ClienteApresentacao {
         String cpf = sc.next();
         System.out.println("informe sua senha: ");
         String senha = sc.next();
-        i = negociocliente.Verificarcliente(cpf, senha);
-        return i;
+        int i = 0;
+        String j =  negociocliente.Verificarcliente(cpf, senha);
+        if (j == null) {
+            System.out.println("A conta não existe!\nTente de novo:\n");
+            logarCliente();
+        }else {
+           i= Integer.parseInt(j);
+        }
+        return i ;
 	}
     
     //obter dados do cliente
@@ -104,6 +112,8 @@ public class ClienteApresentacao {
         opc = sc.next().toLowerCase();
         if (opc.equals("sim")) {
             if (negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao() != null) {
+                System.out.println(i);
+                System.out.println(negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao().getLimite());
                 System.out.println("***************************************Dados Cartão Cliente******************************");
                 System.out.println("Nome do Titular: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao().getNometitular() + "\n"
                         + "Número do cartao: " + Util.formatarNumeroCartao(negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao().getNumerocartao()) + "\n"
@@ -163,20 +173,92 @@ public class ClienteApresentacao {
             System.out.println("Limite: ");
             double limite = sc.nextDouble();
             Cartao cartao = new Cartao(nometitular, numerocartao, datavalidade, codigoseguranca, limite);
-            
+
             negociocliente.alterarCliente(new Cliente(nome, cpf, data, cartao, endereco, senha), i);
         }else {
-        	negociocliente.alterarCliente(new Cliente(nome, cpf, data, endereco, senha), i);
+            Cartao cartaoAnte = negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao();
+            negociocliente.alterarCliente(new Cliente(nome, cpf, data,cartaoAnte, endereco, senha), i);
         }
     }
     public void removerDados(){
-        int j = logarCliente();
+        int j =logarCliente() ;
         System.out.println("*Deseja deletar conta ? s/n");
         String escolha = sc.next();
         if (escolha.equals("s")){
             negociocliente.removerCliente(j);
         }else{
             System.out.println("Cancelando operação");
+        }
+    }
+    public void menuCompras() {
+        double carrinho = 0;
+        int menuCompra = 1;
+        System.out.println("----------------------Lojas--------------------------------");
+        int tamanho1=negocioloja.getDadosLoja().lerDadosLoja().size();
+        for (int i = 0; i < tamanho1; i++) {
+            System.out.println((i + 1) + "-" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getNome());
+        }
+        System.out.println("Imforme qual da Loja:");
+        int nome = sc.nextInt();
+        int i = nome - 1;
+        while (menuCompra == 1) {
+            System.out.println("-----------------------------------Produtos--------------------------------------------\n");
+            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().length; j++) {
+                System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getNome());
+                System.out.println(" preço: R$" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor());
+                System.out.println(" codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getCodigoproduto() + "\n");
+            }
+            System.out.println("Adicionar ao Carrinho:");
+            int escolhaProd = sc.nextInt();
+            int j = escolhaProd - 1;
+            System.out.println("*O produto: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getNome() + " com o valor: R$"
+                    + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor() + " foi adicionado ao carrinho\n");
+            carrinho += negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor();
+            String y;
+            System.out.println("Adicinar mais Produtos ?");
+            y = sc.next().toLowerCase();
+            if (!y.equals("sim")) {
+                System.out.println("Finalizando compra");
+                menuCompra = 0;
+            }
+        }
+        menuCompra++;
+        String finalizarCompra;
+        System.out.println("-------------------------Forma de Pagamento -----------------------------\n" +
+                "1-Cartão\n2-Dinheiro");
+        finalizarCompra = sc.next();
+        if (finalizarCompra.equals("1")) {
+            int s = logarCliente();
+            System.out.println(s);
+            System.out.println(negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().getLimite());
+            double lim = negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().getLimite();
+            if (lim > carrinho) {
+                double returnlimite = lim - carrinho;
+                negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().setLimite(returnlimite);
+                System.out.println("O valor do carrinho é: R$" + carrinho);
+                String setor = "entregador";
+                int tamanho2 = negocioloja.getDadosLoja().lerDadosLoja().get(s).getFucionario().size();
+                for (int j = 0; j < tamanho2; j++) {
+                    if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(s).getFucionario().get(j).getSetor())) {
+                        System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(s).getFucionario().get(j).getNome());
+                        break;
+                    }
+                }
+            } else {
+                System.out.println("Cartão não autorizado!");
+            }
+        } else if (finalizarCompra.equals("2")) {
+            System.out.println("O valor do carrinho é: R$" + carrinho);
+            String setor = "entregador";
+            int tamanho3=negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
+            for (int j = 0; j < tamanho3; j++) {
+                if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getSetor())) {
+                    System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getNome());
+                    break;
+                }
+            }
+        } else {
+            System.out.println("Digitou errado");
         }
     }
 }
