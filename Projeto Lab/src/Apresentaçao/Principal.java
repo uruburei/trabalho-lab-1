@@ -10,7 +10,8 @@ public class Principal {
     public static void main(String[] args) {
         ClienteApresentacao cliente = new ClienteApresentacao();
         LojaApresentacao empresa = new LojaApresentacao();
-
+        int conta;
+        int loja;
         int rodar = 1;
         Scanner sc = new Scanner(System.in);
         while (rodar == 1) {
@@ -24,7 +25,7 @@ public class Principal {
                 String opLogin = sc.next();
 
                 if (opLogin.equals("1")) {
-                    cliente.logarCliente();
+                    conta = cliente.logarCliente();
                     int voltar=0;
                     while (voltar == 0){
                         System.out.println("----------------------------------------------");
@@ -32,12 +33,12 @@ public class Principal {
                         String menuLogin = sc.next();
 
                         if (menuLogin.equals("1")) {
-                            cliente.InterfaceDadosCliente();
+                            cliente.InterfaceDadosCliente(conta);
                             System.out.println("----------------------------------------------");
                             System.out.println("1-Alterar dados\n2-Remover conta\n3-Voltar");
                             String menuConta = sc.next();
                             if (menuConta.equals("1")) {
-                                cliente.AlterarDados();
+                                cliente.AlterarDados(conta);
                             } else if (menuConta.equals("2")) {
                                 cliente.removerDados();
                             }
@@ -57,22 +58,32 @@ public class Principal {
                 System.out.println("--------------------Loja----------------------");
                 System.out.println("1-Logar\n2-Cadastrar-se");
                 String opLogin = sc.next();
+                int menuLoja=0;
 
                 if (opLogin.equals("1")) {
-                    empresa.logarLoja();
-                    System.out.println("1-Alterar dados\n2-Remover loja");
-                    String lojaEscolha = sc.next().toLowerCase();
+                    loja = empresa.logarLoja();
+                    while (menuLoja ==0) {
+                        System.out.println("1-Alterar dados\n2-Remover loja\n3-Visualizar dados");
+                        String lojaEscolha = sc.next().toLowerCase();
 
-                    if (lojaEscolha.equals("1")) {
-                        empresa.AlterarDados();
-                    }else if (lojaEscolha.equals("2")){
-                        empresa.removerDados();
-                    }//falta
-                } else if (opLogin.equals("2")) {
-                    sc.nextLine();
-                    empresa.CadastrarLoja();
-                }
+                        if (lojaEscolha.equals("1")) {
+                            empresa.AlterarDados(loja);
+                            break;
+                        } else if (lojaEscolha.equals("2")) {
+                            empresa.removerDados();
+                            break;
+                        } else if (lojaEscolha.equals("3")) {
+                            empresa.InterfaceDadosLoja(loja);
+                        }
+                    }
+                    } else if (opLogin.equals("2")) {
+                        sc.nextLine();
+                        empresa.CadastrarLoja();
+                    }
+
             } else if (opMenu.equals("3")) {
+                empresa.negocioloja.getDadosLoja().atualizarArquivo();
+                cliente.negociocliente.getDadoscliente().atualizarArquivo();
                 System.out.println("Fechando programa");
                 rodar = 0;
             } else {

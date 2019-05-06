@@ -15,7 +15,6 @@ public class ClienteApresentacao {
     public NegocioEndereco negocioendereco = new NegocioEndereco();
     public NegocioPessoa negociopessoa = new NegocioPessoa();
     public NegocioLoja negocioloja = new NegocioLoja();
-    private int i;
 
     //sistema de cadastro de clientes
     public void CadastrarCliente() {
@@ -92,7 +91,7 @@ public class ClienteApresentacao {
 	}
     
     //obter dados do cliente
-    public void InterfaceDadosCliente() {
+    public void InterfaceDadosCliente(int i) {
         System.out.println("*******************************************Dados do Cliente************************************\n");
         System.out.println("Nome: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getNome() + "\n"
                 + "Data de Nascimento: " + Util.formatarDataNascimento(negociocliente.getDadoscliente().lerDadosCliente().get(i).getData()) + "\n"
@@ -125,7 +124,7 @@ public class ClienteApresentacao {
     }
     
     //alterar dados do cliente
-    public void AlterarDados() {
+    public void AlterarDados(int i) {
             System.out.println("\n----------------------------------Dados Cliente-----------------------------------");
             sc.nextLine();
             System.out.println("Nome: ");
@@ -182,31 +181,32 @@ public class ClienteApresentacao {
     }
     public void removerDados(){
         int j =logarCliente() ;
-        System.out.println("*Deseja deletar conta ? s/n");
+        System.out.println("*Deseja deletar conta ? sim/nao");
         String escolha = sc.next();
-        if (escolha.equals("s")){
+        if (escolha.equals("sim")){
             negociocliente.removerCliente(j);
         }else{
             System.out.println("Cancelando operação");
         }
     }
     public void menuCompras() {
+        int i=0;
         double carrinho = 0;
         int menuCompra = 1;
         int tamanho1 = negocioloja.getDadosLoja().lerDadosLoja().size();
         while (menuCompra == 1) {
             System.out.println("----------------------Lojas--------------------------------");
-            for (int i = 0; i < tamanho1; i++) {
+            for (i = 0; i < tamanho1; i++) {
                 System.out.println((i + 1) + "-" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getNome());
             }
             System.out.println("Imforme qual da Loja:");
             int nome = sc.nextInt();
-            int i = nome - 1;
+            int k = nome - 1;
             System.out.println("-----------------------------------Produtos--------------------------------------------\n");
-            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().length; j++) {
-                System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getNome());
-                System.out.println(" preço: R$" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor());
-                System.out.println(" codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getCodigoproduto() + "\n");
+            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().length; j++) {
+                System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getNome());
+                System.out.println(" preço: R$" + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getValor());
+                System.out.println(" codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getCodigoproduto() + "\n");
             }
             System.out.println("Adicionar ao Carrinho:");
             int escolhaProd = sc.nextInt();
@@ -229,8 +229,6 @@ public class ClienteApresentacao {
         finalizarCompra = sc.next();
         if (finalizarCompra.equals("1")) {
             int s = logarCliente();
-            System.out.println(s);
-            System.out.println(negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().getLimite());
             double lim = negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().getLimite();
             if (lim > carrinho) {
                 double returnlimite = lim - carrinho;

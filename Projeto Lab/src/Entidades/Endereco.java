@@ -1,6 +1,8 @@
 package Entidades;
 
-public class Endereco {
+import java.io.Serializable;
+
+public class Endereco implements Serializable {
 	private String lugadouro;
 	private String numeroResidencia;
 	private String bairro,cidade,estado, cep;
