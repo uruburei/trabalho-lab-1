@@ -193,15 +193,15 @@ public class ClienteApresentacao {
     public void menuCompras() {
         double carrinho = 0;
         int menuCompra = 1;
-        System.out.println("----------------------Lojas--------------------------------");
-        int tamanho1=negocioloja.getDadosLoja().lerDadosLoja().size();
-        for (int i = 0; i < tamanho1; i++) {
-            System.out.println((i + 1) + "-" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getNome());
-        }
-        System.out.println("Imforme qual da Loja:");
-        int nome = sc.nextInt();
-        int i = nome - 1;
+        int tamanho1 = negocioloja.getDadosLoja().lerDadosLoja().size();
         while (menuCompra == 1) {
+            System.out.println("----------------------Lojas--------------------------------");
+            for (int i = 0; i < tamanho1; i++) {
+                System.out.println((i + 1) + "-" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getNome());
+            }
+            System.out.println("Imforme qual da Loja:");
+            int nome = sc.nextInt();
+            int i = nome - 1;
             System.out.println("-----------------------------------Produtos--------------------------------------------\n");
             for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().length; j++) {
                 System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getNome());

@@ -33,7 +33,7 @@ public class NegocioLoja {
 
 	//vai validar a data pra ver se n tem letras e tamanho 2/2/4 ex.(20/05/2000) e retorna corrigido
 	public String validarDataCriacao(String datacriacao) {
-		while (!datacriacao.matches("\\d{2}/\\d{2}/\\d{4}")) {
+		while (!datacriacao.matches("\\d{2}\\d{2}\\d{4}")) {
 			System.out.println("data invalida, por favor digite corretamente: ");
 			datacriacao = sc.next();
 		}

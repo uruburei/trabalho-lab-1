@@ -25,29 +25,34 @@ public class Principal {
 
                 if (opLogin.equals("1")) {
                     cliente.logarCliente();
-                    System.out.println("----------------------------------------------");
-                    System.out.println("1-Visualizar dados\n2-Menu de compra");
-                    String menuLogin = sc.next();
-
-                    if (menuLogin.equals("1")) {
-                        cliente.InterfaceDadosCliente();
+                    int voltar=0;
+                    while (voltar == 0){
                         System.out.println("----------------------------------------------");
-                        System.out.println("1-Alterar dados\n2-Remover conta\n3-Voltar");
-                        String menuConta = sc.next();
-                        if(menuConta.equals("1")){
-                            cliente.AlterarDados();
-                        }else if (menuConta.equals("2")){
-                            cliente.removerDados();
-                        }
+                        System.out.println("1-Visualizar dados\n2-Menu de compra\n3-sair");
+                        String menuLogin = sc.next();
 
-                    } else if (menuLogin.equals("2")) {
-                        cliente.menuCompras();
+                        if (menuLogin.equals("1")) {
+                            cliente.InterfaceDadosCliente();
+                            System.out.println("----------------------------------------------");
+                            System.out.println("1-Alterar dados\n2-Remover conta\n3-Voltar");
+                            String menuConta = sc.next();
+                            if (menuConta.equals("1")) {
+                                cliente.AlterarDados();
+                            } else if (menuConta.equals("2")) {
+                                cliente.removerDados();
+                            }
+                        } else if (menuLogin.equals("2")) {
+                            cliente.menuCompras();
+                        }else if (menuLogin.equals("3")){
+                            break;
+                        }
                     }
                 } else if (opLogin.equals("2")) {
                     cliente.CadastrarCliente();
                 } else {
                     System.out.println("Digitou errado");
                 }
+
             } else if (opMenu.equals("2")) {
                 System.out.println("--------------------Loja----------------------");
                 System.out.println("1-Logar\n2-Cadastrar-se");
