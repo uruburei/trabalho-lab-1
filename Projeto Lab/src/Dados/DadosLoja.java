@@ -52,6 +52,7 @@ public class DadosLoja {
         Produtoo[] produto2 = new Produtoo[3];
         Produtoo[] produto3 = new Produtoo[3];
         Endereco[] endereco = new Endereco[3];
+
         ArrayList<Funcionario>  funcionario = new ArrayList<Funcionario>(2);
         produtoLojaMcDonald[0] = new Produtoo("mcBurguer", 24.5, 2405);
         produtoLojaMcDonald[1] = new Produtoo("mcFly", 14.99, 2487);

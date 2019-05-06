@@ -48,15 +48,18 @@ public class NegocioLoja {
 	}
 
 	//buscar loja
-	public int Verificarloja(String cnpj) {
-		int i;
+	public String Verificarloja(String cnpj) {
+		String j = "";
 		int size=dadosLoja.lerDadosLoja().size();
-		for (i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			if (cnpj.equals(dadosLoja.lerDadosLoja().get(i).getCnpj())) {
+				j = Integer.toString(i);
 				break;
+			}else {
+				j = null;
 			}
 		}
-		return i;
+		return j;
 	}
 
 	//alterar dados da loja

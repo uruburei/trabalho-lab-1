@@ -6,6 +6,7 @@ import Entidades.Endereco;
 import Negocio.*;
 import Util.Util;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClienteApresentacao {
@@ -21,7 +22,7 @@ public class ClienteApresentacao {
         System.out.println("*******************************Cadastrar Cliente*********************************\n");
         System.out.println("------------------------------Endereço------------------------------------------\n");
         System.out.println("Lugadouro: ");
-        String lugadouro = sc.nextLine();
+        String lugadouro = sc.next();
         System.out.println("Numero: ");
         String numero = sc.next();
         System.out.println("Bairro: ");
@@ -87,6 +88,7 @@ public class ClienteApresentacao {
         }else {
            i= Integer.parseInt(j);
         }
+        System.out.println(i);
         return i ;
 	}
     
@@ -111,8 +113,6 @@ public class ClienteApresentacao {
         opc = sc.next().toLowerCase();
         if (opc.equals("sim")) {
             if (negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao() != null) {
-                System.out.println(i);
-                System.out.println(negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao().getLimite());
                 System.out.println("***************************************Dados Cartão Cliente******************************");
                 System.out.println("Nome do Titular: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao().getNometitular() + "\n"
                         + "Número do cartao: " + Util.formatarNumeroCartao(negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao().getNumerocartao()) + "\n"
@@ -235,10 +235,10 @@ public class ClienteApresentacao {
                 negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().setLimite(returnlimite);
                 System.out.println("O valor do carrinho é: R$" + carrinho);
                 String setor = "entregador";
-                int tamanho2 = negocioloja.getDadosLoja().lerDadosLoja().get(s).getFucionario().size();
+                int tamanho2 = negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
                 for (int j = 0; j < tamanho2; j++) {
-                    if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(s).getFucionario().get(j).getSetor())) {
-                        System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(s).getFucionario().get(j).getNome());
+                    if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getSetor())) {
+                        System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getNome());
                         break;
                     }
                 }

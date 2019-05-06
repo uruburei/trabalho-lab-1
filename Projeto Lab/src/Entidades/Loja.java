@@ -14,6 +14,7 @@ public class Loja implements Serializable {
 	private String data;
 	private Endereco endereco;
 	private ArrayList<Funcionario> fucionario ;
+
 	public Loja(String nome, String cnpj, String data,Endereco endereco,Produtoo[] produto,   ArrayList<Funcionario> fucionario) {
 		this.produto = produto;
 		this.nome = nome;

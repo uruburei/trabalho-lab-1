@@ -1,6 +1,8 @@
 package Entidades;
 
-public class Entregador extends Funcionario {
+import java.io.Serializable;
+
+public class Entregador extends Funcionario implements Serializable {
 
     private double gorjeta;
 

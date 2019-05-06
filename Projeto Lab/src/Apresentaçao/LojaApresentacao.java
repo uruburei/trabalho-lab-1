@@ -78,7 +78,6 @@ public class LojaApresentacao {
             System.out.println("informe quantos porcentos de imposto seram retirado do salario: ");
             double impostof = sc.nextDouble();
             if (setorf.equals("entregador")) {
-
                 funcionarios.add(new Entregador(nomef, cpff, dataf, salariof, impostof));
             }else {
                 funcionarios.add(new Funcionario(nomef, cpff, dataf, setorf, salariof, impostof));
@@ -86,14 +85,20 @@ public class LojaApresentacao {
         }
         loja = new Loja(nome, cnpj, data, endereco,produtoos,funcionarios);
 
-        //negocioloja.CadstrarLoja(loja);
         negocioloja.CadstrarLoja(loja);
     }
 
     public int logarLoja() {
         System.out.println("Informe o CNPJ da loja");
         String cnpj = sc.next();
-        int i = negocioloja.Verificarloja(cnpj);
+        int i = 0;
+        String j = negocioloja.Verificarloja(cnpj);
+        if (j == null){
+            System.out.println("Loja não existe\nTente de novo\n");
+            logarLoja();
+        }else {
+           i = Integer.parseInt(j);
+        }
         return i;
     }
 
@@ -115,8 +120,8 @@ public class LojaApresentacao {
         System.out.println("Deseja obter os dados dos seus funcionarios? ");
         String opcfuncionario = sc.next().toLowerCase();
         if (opcfuncionario.equals("sim")) {
+            int size = negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
             System.out.println("-----------------------------------Dados Funcionarios--------------------------------------------\n");
-            int size=negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
             for (int j = 0; j < size; j++) {
                 System.out.println("Nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getNome() + "\n"
                         + "Data de nascimento: " + Util.formatarDataNascimento(negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getData()) + "\n"
@@ -174,7 +179,6 @@ public class LojaApresentacao {
                 sc.nextLine();
                 NegocioPessoa validarpessoa = new NegocioPessoa();
                 System.out.println("nome do funcionario: ");
-
                 String nomef = sc.nextLine();
                 System.out.println("cpf do funcionario: ");
                 String cpff = sc.next();
@@ -189,7 +193,6 @@ public class LojaApresentacao {
                 System.out.println("informe quantos porcentos de imposto seram retirado do salario: ");
                 double impostof = sc.nextDouble();
                 if (setorf.equals("entregador")) {
-
                     funcionarios.add(new Entregador(nomef, cpff, dataf, salariof, impostof));
                 }else {
                     funcionarios.add(new Funcionario(nomef, cpff, dataf, setorf, salariof, impostof));

@@ -41,6 +41,7 @@ public class Principal {
                                 cliente.AlterarDados(conta);
                             } else if (menuConta.equals("2")) {
                                 cliente.removerDados();
+                                break;
                             }
                         } else if (menuLogin.equals("2")) {
                             cliente.menuCompras();
@@ -53,7 +54,8 @@ public class Principal {
                 } else {
                     System.out.println("Digitou errado");
                 }
-
+                cliente.negociocliente.getDadoscliente().atualizarCliente();
+            //--------------------------------loja-------------------------------------;;
             } else if (opMenu.equals("2")) {
                 System.out.println("--------------------Loja----------------------");
                 System.out.println("1-Logar\n2-Cadastrar-se");
@@ -85,6 +87,7 @@ public class Principal {
                 empresa.negocioloja.getDadosLoja().atualizarArquivo();
                 cliente.negociocliente.getDadoscliente().atualizarArquivo();
                 System.out.println("Fechando programa");
+
                 rodar = 0;
             } else {
                 System.out.println("Digitou errado");

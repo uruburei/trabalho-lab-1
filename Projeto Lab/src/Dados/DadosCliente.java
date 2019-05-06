@@ -40,6 +40,7 @@ public class DadosCliente {
     public ArrayList<Cliente> lerDadosCliente() {
         return clientes;
     }
+
     public void receberDadosCliente(Cliente cliente1) {
         clientes.add(cliente1);
     }
