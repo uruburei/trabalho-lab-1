@@ -7,30 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fe56dbfa-1cf9-4258-afb3-902147ffc13a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Apresentaçao/ClienteApresentacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Apresentaçao/ClienteApresentacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Apresentaçao/LojaApresentacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Apresentaçao/LojaApresentacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Apresentaçao/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Apresentaçao/Principal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Dados/DadosCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dados/DadosCliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Dados/DadosLoja.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Dados/DadosLoja.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Entidades/Cartao.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Cartao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Entidades/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Entidades/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Endereco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Entidades/Funcionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Funcionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Entidades/Loja.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Loja.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Entidades/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Pessoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Entidades/Produtoo.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Entidades/Produtoo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apresentaçao/ClienteApresentacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apresentaçao/LojaApresentacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Apresentaçao/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Apresentaçao/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dados/DadosCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dados/DadosCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dados/DadosLoja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dados/DadosLoja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Cartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Cartao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Loja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Loja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Pessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entidades/Produtoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entidades/Produtoo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -281,7 +257,7 @@
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.15739386" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.15739386" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50073206" side_tool="true" weight="0.38437977" />
@@ -289,7 +265,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49926794" visible="true" weight="0.4793262" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49926794" weight="0.4793262" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
