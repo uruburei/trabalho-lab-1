@@ -1,6 +1,8 @@
 package Entidades;
 
-public class Funcionario extends Pessoa {
+import java.io.Serializable;
+
+public class Funcionario extends Pessoa implements Serializable {
     private String setor;
     private double salario, imposto;
 

@@ -10,7 +10,6 @@ public class Principal {
     public static void main(String[] args) {
         ClienteApresentacao cliente = new ClienteApresentacao();
         LojaApresentacao empresa = new LojaApresentacao();
-
         int rodar = 1;
         Scanner sc = new Scanner(System.in);
         while (rodar == 1) {
@@ -38,8 +37,10 @@ public class Principal {
                             String menuConta = sc.next();
                             if (menuConta.equals("1")) {
                                 cliente.AlterarDados();
+                                break;
                             } else if (menuConta.equals("2")) {
                                 cliente.removerDados();
+                                break;
                             }
                         } else if (menuLogin.equals("2")) {
                             cliente.menuCompras();
@@ -52,7 +53,8 @@ public class Principal {
                 } else {
                     System.out.println("Digitou errado");
                 }
-
+                cliente.negociocliente.getDadoscliente().atualizarCliente();
+            //--------------------------------loja-------------------------------------;;
             } else if (opMenu.equals("2")) {
                 System.out.println("--------------------Loja----------------------");
                 System.out.println("1-Logar\n2-Cadastrar-se");
@@ -60,20 +62,27 @@ public class Principal {
 
                 if (opLogin.equals("1")) {
                     empresa.logarLoja();
-                    System.out.println("1-Alterar dados\n2-Remover loja");
-                    String lojaEscolha = sc.next().toLowerCase();
-
-                    if (lojaEscolha.equals("1")) {
-                        empresa.AlterarDados();
-                    }else if (lojaEscolha.equals("2")){
-                        empresa.removerDados();
-                    }//falta
+                    int loopLoja = 0;
+                    while (loopLoja == 0) {
+                        System.out.println("1-Alterar dados\n2-Remover loja\n3-Visualizar dados");
+                        String lojaEscolha = sc.next();
+                        if (lojaEscolha.equals("1")) {
+                            empresa.AlterarDados();
+                            break;
+                        } else if (lojaEscolha.equals("2")) {
+                            empresa.removerDados();
+                            break;
+                        } else if (lojaEscolha.equals("3")) {
+                            empresa.InterfaceDadosLoja();
+                        }
+                   }
                 } else if (opLogin.equals("2")) {
                     sc.nextLine();
                     empresa.CadastrarLoja();
                 }
             } else if (opMenu.equals("3")) {
                 System.out.println("Fechando programa");
+
                 rodar = 0;
             } else {
                 System.out.println("Digitou errado");

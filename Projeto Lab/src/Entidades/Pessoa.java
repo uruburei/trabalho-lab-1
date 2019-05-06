@@ -1,6 +1,8 @@
 package Entidades;
 
-public class Pessoa {
+import java.io.Serializable;
+
+public class Pessoa implements Serializable {
 	private String nome, cpf, data; 
 	public Pessoa(String nome, String cpf, String data){
 		this.nome = nome;

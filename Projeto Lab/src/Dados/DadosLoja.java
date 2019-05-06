@@ -5,18 +5,44 @@ import Entidades.Funcionario;
 import Entidades.Loja;
 import Entidades.Produtoo;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class DadosLoja {
-    private ArrayList<Loja> lojas = new ArrayList<Loja>(3);
-    private Produtoo[] produtoLojaMcDonald = new Produtoo[3];
-    private Produtoo[] produto2 = new Produtoo[3];
-    private Produtoo[] produto3 = new Produtoo[3];
-    private Endereco[] endereco = new Endereco[3];
-    private ArrayList<Funcionario>  funcionario = new ArrayList<Funcionario>(2);
-
+    private ArrayList<Loja> lojas = new ArrayList<>();
+    public DadosLoja(){
+        preCadastrados();
+        atualizarLojas();
+    }
 
     public ArrayList<Loja> lerDadosLoja() {
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/Lojas.txt"));
+            lojas = (ArrayList<Loja>) ois.readObject();
+            ois.close();
+        }catch (IOException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return lojas;
+    }
+    public void receberDadosLoja(Loja loja1) {
+        lojas.add(loja1);
+        atualizarLojas();
+    }
+    public void alterarDadosLoja(int i, Loja loja) {
+        lojas.set(i, loja);
+        atualizarLojas();
+    }
+    public void removerDadosLoja(int i){
+        lojas.remove(i);
+        atualizarLojas();
+    }
+    public void preCadastrados(){
+        Produtoo[] produtoLojaMcDonald = new Produtoo[3];
+        Produtoo[] produto2 = new Produtoo[3];
+        Produtoo[] produto3 = new Produtoo[3];
+        Endereco[] endereco = new Endereco[3];
+        ArrayList<Funcionario>  funcionario = new ArrayList<>();
         //produtos das lojas
         produtoLojaMcDonald[0] = new Produtoo("mcBurguer", 24.5, 2405);
         produtoLojaMcDonald[1] = new Produtoo("mcFly", 14.99, 2487);
@@ -42,15 +68,14 @@ public class DadosLoja {
         lojas.add(new Loja("McDonald's", "01685640001021", "10081980", endereco[0], produtoLojaMcDonald, funcionario));
         lojas.add(new Loja("BurguerKing", "51685840001021", "10081980", endereco[1], produto2, funcionario));
         lojas.add(new Loja("Giraffa's", "51686890001021", "10081980", endereco[2], produto3, funcionario));
-        return lojas;
     }
-    public void receberDadosLoja(Loja loja1) {
-        lojas.add(loja1);
-    }
-    public void alterarDadosLoja(int i, Loja loja) {
-        lojas.set(i, loja);
-    }
-    public void removerDadosLoja(int i){
-        lojas.remove(i);
+    private void atualizarLojas(){
+        try {
+            ObjectOutputStream oss= new ObjectOutputStream(new FileOutputStream("src/Lojas.txt"));
+            oss.writeObject(lojas);
+            oss.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
