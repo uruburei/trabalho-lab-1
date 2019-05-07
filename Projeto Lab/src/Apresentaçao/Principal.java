@@ -54,7 +54,6 @@ public class Principal {
                 } else {
                     System.out.println("Digitou errado");
                 }
-                cliente.negociocliente.getDadoscliente().atualizarCliente();
             //--------------------------------loja-------------------------------------;;
             } else if (opMenu.equals("2")) {
                 System.out.println("--------------------Loja----------------------");

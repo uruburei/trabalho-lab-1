@@ -10,18 +10,18 @@ import java.util.ArrayList;
 
 public class DadosCliente {
     private ArrayList<Cliente> clientes = new ArrayList<>();
-
+    private File file = new File("src/Cliente.txt");
     public DadosCliente(){
-        if (! new File("src/Cliente").exists()){
-            atualizarArquivo();
+        if (!file.exists()){
             preCadastrados();
+            atualizarArquivo();
         }
         atualizarArray();
     }
 
     public void atualizarArray(){
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/Cliente.txt"));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
             this.clientes = (ArrayList<Cliente>) ois.readObject();
             ois.close();
         }catch (IOException | ClassNotFoundException e){
@@ -30,7 +30,7 @@ public class DadosCliente {
     }
     public void atualizarArquivo(){
         try {
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/Cliente.txt"));
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
             oos.writeObject(this.clientes);
             oos.close();
         }catch (IOException e){

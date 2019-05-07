@@ -12,9 +12,11 @@ public class DadosLoja {
     private ArrayList<Loja> lojas = new ArrayList<Loja>(3);
     private File file = new File("src/Loja.txt");
     public DadosLoja(){
-        atualizarArquivo();
+        if (!file.exists()){
+            preCadastrado();
+            atualizarArquivo();
+        }
         atualizarArray();
-        preCadastrado();
     }
     public void atualizarArray(){
         try {
