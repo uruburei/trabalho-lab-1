@@ -3,11 +3,10 @@ package Apresentaçao;
 import Entidades.Cartao;
 import Entidades.Cliente;
 import Entidades.Endereco;
-import Negocio.NegocioCartao;
-import Negocio.NegocioCliente;
-import Negocio.NegocioEndereco;
+import Negocio.*;
 import Util.Util;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClienteApresentacao {
@@ -15,14 +14,15 @@ public class ClienteApresentacao {
     public NegocioCliente negociocliente = new NegocioCliente();
     public NegocioCartao negociocartao = new NegocioCartao();
     public NegocioEndereco negocioendereco = new NegocioEndereco();
-    private int i;
+    public NegocioPessoa negociopessoa = new NegocioPessoa();
+    public NegocioLoja negocioloja = new NegocioLoja();
 
     //sistema de cadastro de clientes
     public void CadastrarCliente() {
         System.out.println("*******************************Cadastrar Cliente*********************************\n");
         System.out.println("------------------------------Endereço------------------------------------------\n");
         System.out.println("Lugadouro: ");
-        String lugadouro = sc.nextLine();
+        String lugadouro = sc.next();
         System.out.println("Numero: ");
         String numero = sc.next();
         System.out.println("Bairro: ");
@@ -40,9 +40,9 @@ public class ClienteApresentacao {
         System.out.println("Nome: ");
         String nome = sc.nextLine();
         System.out.println("Data de nascimento: ");
-        String data = sc.next();
+        String data = negociopessoa.validarDataNascimento(sc.next());
         System.out.println("CPF: ");
-        String cpf = sc.next();
+        String cpf = negociopessoa.validarCPF(sc.next());
         System.out.println("Senha: ");
         String senha = sc.next();
         System.out.println("deseja cadastrar o cartão? ");
@@ -70,20 +70,30 @@ public class ClienteApresentacao {
         } else {
             cliente = new Cliente(nome, cpf, data, endereco, senha);
         }
-        negociocliente.CadastroCliente(cliente);
+        negociocliente.CadastroCliente(cliente);//Vai criar o Cliente
+
     }
 
     //
-    public void logarCliente() {
+    public int logarCliente() {
     	System.out.println("informe seu  CPF: ");
         String cpf = sc.next();
         System.out.println("informe sua senha: ");
         String senha = sc.next();
-         i = negociocliente.Verificarcliente(cpf, senha);
+        int i = 0;
+        String j =  negociocliente.Verificarcliente(cpf, senha);
+        if (j == null) {
+            System.out.println("A conta não existe!\nTente de novo:\n");
+            logarCliente();
+        }else {
+           i= Integer.parseInt(j);
+        }
+        System.out.println(i);
+        return i ;
 	}
     
     //obter dados do cliente
-    public void InterfaceDadosCliente() {
+    public void InterfaceDadosCliente(int i) {
         System.out.println("*******************************************Dados do Cliente************************************\n");
         System.out.println("Nome: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getNome() + "\n"
                 + "Data de Nascimento: " + Util.formatarDataNascimento(negociocliente.getDadoscliente().lerDadosCliente().get(i).getData()) + "\n"
@@ -114,7 +124,7 @@ public class ClienteApresentacao {
     }
     
     //alterar dados do cliente
-    public void AlterarDados() {
+    public void AlterarDados(int i) {
             System.out.println("\n----------------------------------Dados Cliente-----------------------------------");
             sc.nextLine();
             System.out.println("Nome: ");
@@ -162,11 +172,91 @@ public class ClienteApresentacao {
             System.out.println("Limite: ");
             double limite = sc.nextDouble();
             Cartao cartao = new Cartao(nometitular, numerocartao, datavalidade, codigoseguranca, limite);
-            
+
             negociocliente.alterarCliente(new Cliente(nome, cpf, data, cartao, endereco, senha), i);
         }else {
-        	negociocliente.alterarCliente(new Cliente(nome, cpf, data, endereco, senha), i);
+            Cartao cartaoAnte = negociocliente.getDadoscliente().lerDadosCliente().get(i).getCartao();
+            negociocliente.alterarCliente(new Cliente(nome, cpf, data,cartaoAnte, endereco, senha), i);
         }
-        
+    }
+    public void removerDados(){
+        int j =logarCliente() ;
+        System.out.println("*Deseja deletar conta ? sim/nao");
+        String escolha = sc.next();
+        if (escolha.equals("sim")){
+            negociocliente.removerCliente(j);
+        }else{
+            System.out.println("Cancelando operação");
+        }
+    }
+    public void menuCompras() {
+        int i=0;
+        double carrinho = 0;
+        int menuCompra = 1;
+        int tamanho1 = negocioloja.getDadosLoja().lerDadosLoja().size();
+        while (menuCompra == 1) {
+            System.out.println("----------------------Lojas--------------------------------");
+            for (i = 0; i < tamanho1; i++) {
+                System.out.println((i + 1) + "-" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getNome());
+            }
+            System.out.println("Imforme qual da Loja:");
+            int nome = sc.nextInt();
+            int k = nome - 1;
+            System.out.println("-----------------------------------Produtos--------------------------------------------\n");
+            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().length; j++) {
+                System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getNome());
+                System.out.println(" preço: R$" + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getValor());
+                System.out.println(" codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getCodigoproduto() + "\n");
+            }
+            System.out.println("Adicionar ao Carrinho:");
+            int escolhaProd = sc.nextInt();
+            int j = escolhaProd - 1;
+            System.out.println("*O produto: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getNome() + " com o valor: R$"
+                    + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor() + " foi adicionado ao carrinho\n");
+            carrinho += negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor();
+            String y;
+            System.out.println("Adicinar mais Produtos ?");
+            y = sc.next().toLowerCase();
+            if (!y.equals("sim")) {
+                System.out.println("Finalizando compra");
+                menuCompra = 0;
+            }
+        }
+        menuCompra++;
+        String finalizarCompra;
+        System.out.println("-------------------------Forma de Pagamento -----------------------------\n" +
+                "1-Cartão\n2-Dinheiro");
+        finalizarCompra = sc.next();
+        if (finalizarCompra.equals("1")) {
+            int s = logarCliente();
+            double lim = negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().getLimite();
+            if (lim > carrinho) {
+                double returnlimite = lim - carrinho;
+                negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().setLimite(returnlimite);
+                System.out.println("O valor do carrinho é: R$" + carrinho);
+                String setor = "entregador";
+                int tamanho2 = negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
+                for (int j = 0; j < tamanho2; j++) {
+                    if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getSetor())) {
+                        System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getNome());
+                        break;
+                    }
+                }
+            } else {
+                System.out.println("Cartão não autorizado!");
+            }
+        } else if (finalizarCompra.equals("2")) {
+            System.out.println("O valor do carrinho é: R$" + carrinho);
+            String setor = "entregador";
+            int tamanho3=negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
+            for (int j = 0; j < tamanho3; j++) {
+                if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getSetor())) {
+                    System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getNome());
+                    break;
+                }
+            }
+        } else {
+            System.out.println("Digitou errado");
+        }
     }
 }

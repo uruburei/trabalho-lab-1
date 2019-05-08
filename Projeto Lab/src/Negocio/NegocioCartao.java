@@ -25,7 +25,7 @@ public class NegocioCartao {
   
   //vai verificar se a data esta correta exemplo ex.(12/22) e retorna corrigido
 	public String validarDatadeValidade(String s) {
-			while (!s.matches("\\d{2}/\\d{2}")) {
+			while (!s.matches("\\d{2}\\d{2}")) {
 				System.out.println("A validade do cartao esta errada, por favor digite corretamente: ");
 				s = sc.next();
 			}

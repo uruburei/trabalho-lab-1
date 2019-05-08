@@ -23,20 +23,29 @@ public class NegocioCliente {
     }
     
     //buscar cliente 
-    public int Verificarcliente(String cpf, String senha) {
-        int i;
+    public String Verificarcliente(String cpf, String senha) {
+        String j = "";
         int size = dadoscliente.lerDadosCliente().size();
-        for (i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (cpf.equals(dadoscliente.lerDadosCliente().get(i).getCpf()) && senha.equals(dadoscliente.lerDadosCliente().get(i).getSenha())) {
+                j = Integer.toString(i);
                 break;
+            }else {
+                j =null;
             }
         }
-        return i;
+        return j;
     }
     
     //alterar dados do cliente
     public boolean alterarCliente(Cliente cliente, int i) {
-        dadoscliente.alterarDados(i, cliente);
+        dadoscliente.alterarDadosCliente(i, cliente);
+        return true;
+    }
+
+    //remover dados do cliente
+    public boolean removerCliente(int i){
+        dadoscliente.removerDadosCliente(i);
         return true;
     }
     

@@ -1,6 +1,8 @@
 package Entidades;
 
-public class Produtoo {
+import java.io.Serializable;
+
+public class Produtoo implements Serializable {
 	private String nome;
 	private int codigoproduto;
 	private double valor;

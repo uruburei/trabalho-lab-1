@@ -1,6 +1,8 @@
 package Entidades;
 
-public class Cliente extends Pessoa {
+import java.io.Serializable;
+
+public class Cliente extends Pessoa implements Serializable {
     private Cartao cartao;
     private Endereco endereco;
     private String senha;

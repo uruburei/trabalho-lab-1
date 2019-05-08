@@ -21,23 +21,19 @@ public class NegocioLoja {
 	private Scanner sc = new Scanner(System.in);
 	private DadosLoja dadosLoja = new DadosLoja();
 
-	//validar cnpj
+	//vai validar o cnpj pra ver se n tem letras e se é menor/maior  que 14,e retorna corrigido ex.(15748596325698)
 	public String validarCNPJ(String cnpj) {
-		//vai validar o cnpj pra ver se n tem letras e Ã© menor/maior  que 14,e retorna corrigido ex.(15748596325698)
 		while (!cnpj.matches("\\d{14}")) {
 			System.out.println("cnpj invalido, por favor digite corretamente: ");
 			cnpj = sc.next();
-			f = cnpj.matches("\\d{14}");
 		}
-
 		System.out.println("cnpj valido!");
 		return cnpj;
 	}
 
-	//validar data de inicialização da loja
+	//vai validar a data pra ver se n tem letras e tamanho 2/2/4 ex.(20/05/2000) e retorna corrigido
 	public String validarDataCriacao(String datacriacao) {
-		//vai validar a data pra ver se n tem letras e tamanho 2/2/4 ex.(20/05/2000) e retorna corrigido
-		while (!datacriacao.matches("\\d{2}/\\d{2}/\\d{4}")) {
+		while (!datacriacao.matches("\\d{2}\\d{2}\\d{4}")) {
 			System.out.println("data invalida, por favor digite corretamente: ");
 			datacriacao = sc.next();
 		}
@@ -52,15 +48,30 @@ public class NegocioLoja {
 	}
 
 	//buscar loja
-	public int Verificarloja(String cnpj) {
-		int i;
+	public String Verificarloja(String cnpj) {
+		String j = "";
 		int size=dadosLoja.lerDadosLoja().size();
-		for (i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			if (cnpj.equals(dadosLoja.lerDadosLoja().get(i).getCnpj())) {
+				j = Integer.toString(i);
 				break;
+			}else {
+				j = null;
 			}
 		}
-		return i;
+		return j;
+	}
+
+	//alterar dados da loja
+	public boolean alterarLoja(Loja loja, int i) {
+		dadosLoja.alterarDadosLoja(i, loja);
+		return true;
+	}
+
+	//remover dados da loja
+	public boolean removerLoja(int i){
+		dadosLoja.removerDadosLoja(i);
+		return true;
 	}
 	
 	public DadosLoja getDadosLoja() {

@@ -1,6 +1,8 @@
 package Entidades;
 
-public class Cartao {
+import java.io.Serializable;
+
+public class Cartao implements Serializable {
 		private String nometitular;
 		private String numerocartao;
 		private String validade;

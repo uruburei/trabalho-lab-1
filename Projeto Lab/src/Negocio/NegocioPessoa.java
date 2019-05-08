@@ -19,19 +19,21 @@ public class NegocioPessoa {
 			cpf = sc.next();
 		}
 		System.out.println("cpf valido!");
+		return cpf;
 	}
 	
 	//validar data de nascimento
-	public void validarDataNascimento(String datanascimento) {
+	public String validarDataNascimento(String datanascimento) {
 		int data;
 		data = Integer.parseInt(datanascimento.substring(4, 8));
 		data = 2018 - data;
-		while (!datanascimento.matches("\\d{8}") && data< 18)) {
+		while (!datanascimento.matches("\\d{8}") && data< 18) {
 			System.out.println("data de nascimento invalida, por favor digite corretamente: ");
 			datanascimento = sc.next();
 			data = Integer.parseInt(datanascimento.substring(4, 8));
 			data = 2018 - data;
 		}
 		System.out.println("data de nascimento valida!");
+		return datanascimento;
 	}
 }
