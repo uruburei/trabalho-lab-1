@@ -26,7 +26,7 @@ public class NegocioPessoa {
 	public String validarDataNascimento(String datanascimento) {
 		int data;
 		data = Integer.parseInt(datanascimento.substring(4, 8));
-		data = 2018 - data;
+		data = 2019 - data;
 		while (!datanascimento.matches("\\d{8}") && data< 18) {
 			System.out.println("data de nascimento invalida, por favor digite corretamente: ");
 			datanascimento = sc.next();
@@ -35,5 +35,15 @@ public class NegocioPessoa {
 		}
 		System.out.println("data de nascimento valida!");
 		return datanascimento;
+	}
+
+	public boolean validarCPFGrafico(String cpf) {
+		return (cpf.matches("\\d{11}"));
+	}
+	public boolean validarDataNascimentoGrafico(String datanascimento) {
+		int data;
+		data = Integer.parseInt(datanascimento.substring(4, 8));
+		data = 2018 - data;
+		return (datanascimento.matches("\\d{8}") && data> 18);
 	}
 }

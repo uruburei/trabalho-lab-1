@@ -1,4 +1,4 @@
-package Apresentaçao;
+package Apresentacao;
 
 import Entidades.Cartao;
 import Entidades.Cliente;
@@ -6,7 +6,6 @@ import Entidades.Endereco;
 import Negocio.*;
 import Util.Util;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClienteApresentacao {
@@ -20,7 +19,7 @@ public class ClienteApresentacao {
     //sistema de cadastro de clientes
     public void CadastrarCliente() {
         System.out.println("*******************************Cadastrar Cliente*********************************\n");
-        System.out.println("------------------------------Endereço------------------------------------------\n");
+        System.out.println("------------------------------Endereco------------------------------------------\n");
         System.out.println("Lugadouro: ");
         String lugadouro = sc.next();
         System.out.println("Numero: ");
@@ -74,7 +73,7 @@ public class ClienteApresentacao {
 
     }
 
-    //
+
     public int logarCliente() {
     	System.out.println("informe seu  CPF: ");
         String cpf = sc.next();
@@ -101,7 +100,7 @@ public class ClienteApresentacao {
         System.out.println("-deseja obter informações sobre o endereço? ");
         String opc = sc.next().toLowerCase();
         if (opc.equals("sim")) {
-            System.out.println("***************************************Dados Endereço Cliente******************************\n");
+            System.out.println("***************************************Dados Endereco Cliente******************************\n");
             System.out.println("Lugadouro: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getEndereco().getLugadouro() + "\n"
                     + "Nº: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getEndereco().getNumeroResidencia() + "\n"
                     + "Bairro: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getEndereco().getBairro() + "\n"
@@ -136,7 +135,7 @@ public class ClienteApresentacao {
             System.out.println("Senha: ");
             String senha = sc.next();
            
-            System.out.println("------------------------------Endereço------------------------------------------\n");
+            System.out.println("------------------------------Endereco------------------------------------------\n");
             sc.nextLine();
             System.out.println("Lugadouro: ");
             String lugadouro = sc.nextLine();

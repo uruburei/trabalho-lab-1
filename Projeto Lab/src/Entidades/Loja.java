@@ -23,6 +23,13 @@ public class Loja implements Serializable {
 		this.endereco = endereco;
 		this.fucionario = fucionario;
 	}
+	public Loja(String nome, String cnpj, String data,Endereco endereco) {
+		this.nome = nome;
+		this.cnpj = cnpj;
+		this.data = data;
+		this.endereco = endereco;
+	}
+
 	public String getNome() {
 		return nome;
 	}

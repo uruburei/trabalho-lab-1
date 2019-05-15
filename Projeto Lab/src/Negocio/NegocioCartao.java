@@ -44,4 +44,14 @@ public class NegocioCartao {
 			System.out.println("O codigo de segurança do cartao esta valido.");
 			return Integer.parseInt(s);
 	}
+
+	public boolean validarNumeroGrafico(String numerocartao) {
+		return (numerocartao.matches("\\d{16}")) ;
+	}
+	public boolean validarDatadeValidadeGrafico(String s) {
+		return (s.matches("\\d{2}\\d{2}")) ;
+	}
+	public boolean validarCodigoDeSegurancaGrafico(String codigodeseguranca) {
+		return (codigodeseguranca.matches("\\d{3}"));
+	}
 }
