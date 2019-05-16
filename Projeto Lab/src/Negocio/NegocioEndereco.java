@@ -22,4 +22,7 @@ public class NegocioEndereco {
 			System.out.println("numero do cep valido.");
 			return cep;
 	}
+	public boolean validarCEPGrafico(String cep) {
+		return (cep.matches("\\d{8}"));
+	}
 }

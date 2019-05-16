@@ -1,4 +1,4 @@
-package Apresentaçao;
+package Apresentacao;
 
 import Entidades.*;
 import Negocio.NegocioEndereco;
@@ -16,7 +16,7 @@ public class LojaApresentacao {
 
     public void CadastrarLoja() {
         System.out.println("------------------------------cadastro loja---------------------------------");
-        System.out.println("\n*************************Endereço*************************************");
+        System.out.println("\n*************************Endereco*************************************");
 
         System.out.println("Lugadouro: ");
         String lugadouro = sc.nextLine();
@@ -142,7 +142,7 @@ public class LojaApresentacao {
         System.out.println("informe quando sua loja foi criada: ");
         String data = sc.next();
         data = negocioloja.validarDataCriacao(data);//o metodo vai validar a data e retornar corrigido
-        System.out.println("\n*************************Endereço*************************************");
+        System.out.println("\n*************************Endereco*************************************");
         System.out.println("Lugadouro: ");
         String lugadouro = sc.next();
         System.out.println("Numero: ");

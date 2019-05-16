@@ -1,8 +1,4 @@
-package Apresentaçao;
-
-import Dados.DadosLoja;
-import Negocio.NegocioCliente;
-import Negocio.NegocioLoja;
+package Apresentacao;
 
 import java.util.Scanner;
 

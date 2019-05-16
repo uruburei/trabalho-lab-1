@@ -1,0 +1,16 @@
+.btnLoja,
+.btnCliente{
+ -fx-border-color: #fff;
+ -fx-border-radius: 50px;
+ -fx-background-radius: 50px;
+}
+.anchor{
+ -fx-background-color: #fff;
+}
+.btnLoginCliente{
+ -fx-background-color: #3AB19B;
+ -fx-background-radius: 50px;
+}
+.telaLogin{
+ -fx-background-color: #FFF;
+}
