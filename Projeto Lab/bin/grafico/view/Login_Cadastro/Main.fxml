@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafico.controllers.Login_Cadastro.CPainelPrincipal">
+   <children>
+      <AnchorPane layoutX="450.0" prefHeight="460.0" prefWidth="279.0" style="-fx-background-color: #4EAFBA;">
+         <children>
+            <ImageView fitHeight="460.0" fitWidth="281.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../img/material-design-dark-red-black-ap-1440x2960.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="90.0" layoutY="139.0" text="Loja" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="53.0" layoutY="197.0" prefHeight="51.0" prefWidth="169.0" text="CADASTRE A SUA LOJA GRATUITAMENTE!" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnLoja" focusTraversable="false" layoutX="55.0" layoutY="260.0" onAction="#abrirCliente" prefHeight="43.0" prefWidth="169.0" styleClass="btnLoja" stylesheets="@../../style/Teste.css" text="Entrar" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Tai Le" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="460.0" prefWidth="279.0" style="-fx-background-color: #4EAFBA;">
+         <children>
+            <ImageView fitHeight="460.0" fitWidth="281.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../img/unknown%20(1).png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnCliente" focusTraversable="false" layoutX="55.0" layoutY="260.0" onAction="#abrirLoja" prefHeight="43.0" prefWidth="169.0" styleClass="btnCliente" stylesheets="@../../style/Teste.css" text="Entrar" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Tai Le" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="62.0" layoutY="139.0" text="Cliente" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="53.0" layoutY="197.0" prefHeight="51.0" prefWidth="169.0" text="CRIE SUA CONTA" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="anchor" prefHeight="460.0" prefWidth="450.0" styleClass="anchor" stylesheets="@../../style/Teste.css" />
+   </children>
+</AnchorPane>

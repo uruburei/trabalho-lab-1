@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: #CFE8DC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafico.controllers.Menu_Principal.CMenuPrincipal">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="601.0" prefWidth="141.0" style="-fx-background-color: #FFF;">
+         <children>
+            <VBox layoutY="71.0" prefHeight="530.0" prefWidth="141.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0">
+               <children>
+                  <Label text="Lojas" textFill="#2e8318">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Conta" textFill="#2e8318">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Contato" textFill="#2e8318">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Sair" textFill="#2e8318">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <ListView fx:id="ListaLojas" layoutX="193.0" layoutY="177.0" prefHeight="382.0" prefWidth="698.0" />
+   </children>
+</AnchorPane>
