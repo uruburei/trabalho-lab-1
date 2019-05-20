@@ -27,7 +27,7 @@ public class NegocioPessoa {
 		int data;
 		data = Integer.parseInt(datanascimento.substring(4, 8));
 		data = 2019 - data;
-		while (!datanascimento.matches("\\d{8}") && data< 18) {
+		while (!datanascimento.matches("\\d{8}") && data>= 18) {
 			System.out.println("data de nascimento invalida, por favor digite corretamente: ");
 			datanascimento = sc.next();
 			data = Integer.parseInt(datanascimento.substring(4, 8));
