@@ -9,25 +9,19 @@ import Dados.DadosLoja;
 import Negocio.NegocioPessoa;
 
 public class Loja implements Serializable {
-	private Produtoo[] produto ;
+	private ArrayList<Produtoo> produto;
 	private String nome, cnpj;
 	private String data;
 	private Endereco endereco;
-	private ArrayList<Funcionario> fucionario ;
+	private ArrayList<Funcionario> fucionario;
 
-	public Loja(String nome, String cnpj, String data,Endereco endereco,Produtoo[] produto,   ArrayList<Funcionario> fucionario) {
+	public Loja(String nome, String cnpj, String data,Endereco endereco,ArrayList<Produtoo> produto,   ArrayList<Funcionario> fucionario) {
 		this.produto = produto;
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.data = data;
 		this.endereco = endereco;
 		this.fucionario = fucionario;
-	}
-	public Loja(String nome, String cnpj, String data,Endereco endereco) {
-		this.nome = nome;
-		this.cnpj = cnpj;
-		this.data = data;
-		this.endereco = endereco;
 	}
 
 	public String getNome() {
@@ -48,7 +42,7 @@ public class Loja implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Produtoo[] getProduto() {
+	public ArrayList<Produtoo> getProduto() {
 		return produto;
 	}
 	public String getCnpj() {
@@ -63,7 +57,7 @@ public class Loja implements Serializable {
 	public void setFucionario(ArrayList<Funcionario> fucionario) {
 		this.fucionario = fucionario;
 	}
-	public void setProduto(Produtoo[] produto) {
+	public void setProduto(ArrayList<Produtoo> produto) {
 		this.produto = produto;
 	}
 }

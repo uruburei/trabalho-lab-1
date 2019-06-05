@@ -15,65 +15,10 @@ public class ClienteApresentacao {
     public NegocioEndereco negocioendereco = new NegocioEndereco();
     public NegocioPessoa negociopessoa = new NegocioPessoa();
     public NegocioLoja negocioloja = new NegocioLoja();
-
-    //sistema de cadastro de clientes
-    public void CadastrarCliente() {
-        System.out.println("*******************************Cadastrar Cliente*********************************\n");
-        System.out.println("------------------------------Endereco------------------------------------------\n");
-        System.out.println("Lugadouro: ");
-        String lugadouro = sc.next();
-        System.out.println("Numero: ");
-        String numero = sc.next();
-        System.out.println("Bairro: ");
-        String bairro = sc.next();
-        System.out.println("Cidade: ");
-        String cidade = sc.next();
-        System.out.println("Estado: ");
-        String estado = sc.next();
-        System.out.println("CEP: ");
-        String cep = sc.next();
-        cep = negocioendereco.validarCEP(cep);//vai validar o cep e retornar corrigido
-        Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
-        System.out.println("\n----------------------------------Dados Cliente-----------------------------------");
-        sc.nextLine();
-        System.out.println("Nome: ");
-        String nome = sc.nextLine();
-        System.out.println("Data de nascimento: ");
-        String data = negociopessoa.validarDataNascimento(sc.next());
-        System.out.println("CPF: ");
-        String cpf = negociopessoa.validarCPF(sc.next());
-        System.out.println("Senha: ");
-        String senha = sc.next();
-        System.out.println("deseja cadastrar o cartão? ");
-        String opc = sc.next().toLowerCase();
-        Cliente cliente;
-        if (opc.equals("sim")) {
-            System.out.println("\n----------------------------------Dados Cartão-----------------------------------");
-            sc.nextLine();
-            System.out.println("Nome do Titular do Cartao: ");
-            String nometitular = sc.nextLine();
-            System.out.println("Número do Cartão: ");
-            String numerocartao = sc.next();
-            numerocartao = negociocartao.validarNumero(numerocartao);//vai validar o numero e retornar corrigido
-            System.out.println("data de validade: ");
-            String datavalidade = sc.next();
-            datavalidade = negociocartao.validarDatadeValidade(datavalidade);//vai validar a data e retornar corrigido
-            System.out.println("código de segurança: ");
-            int codigoseguranca = sc.nextInt();
-            codigoseguranca = negociocartao.validarCodigoDeSeguranca(codigoseguranca);//vai validar o codigo e retornar corrigido
-            System.out.println("Limite: ");
-            double limite = sc.nextDouble();
-            Cartao cartao = new Cartao(nometitular, numerocartao, datavalidade, codigoseguranca, limite);
-            cliente = new Cliente(nome, cpf, data, cartao, endereco, senha);
-
-        } else {
-            cliente = new Cliente(nome, cpf, data, endereco, senha);
-        }
-        negociocliente.CadastroCliente(cliente);//Vai criar o Cliente
-
-    }
-
-
+    
+    public void cadastrarCliente() {
+		negociocliente.CadastroCliente(criarCliente());
+	}
     public int logarCliente() {
     	System.out.println("informe seu  CPF: ");
         String cpf = sc.next();
@@ -92,7 +37,7 @@ public class ClienteApresentacao {
 	}
     
     //obter dados do cliente
-    public void InterfaceDadosCliente(int i) {
+    public void interfaceDadosCliente(int i) {
         System.out.println("*******************************************Dados do Cliente************************************\n");
         System.out.println("Nome: " + negociocliente.getDadoscliente().lerDadosCliente().get(i).getNome() + "\n"
                 + "Data de Nascimento: " + Util.formatarDataNascimento(negociocliente.getDadoscliente().lerDadosCliente().get(i).getData()) + "\n"
@@ -123,7 +68,7 @@ public class ClienteApresentacao {
     }
     
     //alterar dados do cliente
-    public void AlterarDados(int i) {
+    public void alterarDados(int i) {
             System.out.println("\n----------------------------------Dados Cliente-----------------------------------");
             sc.nextLine();
             System.out.println("Nome: ");
@@ -202,17 +147,17 @@ public class ClienteApresentacao {
             int nome = sc.nextInt();
             int k = nome - 1;
             System.out.println("-----------------------------------Produtos--------------------------------------------\n");
-            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().length; j++) {
-                System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getNome());
-                System.out.println(" preço: R$" + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getValor());
-                System.out.println(" codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto()[j].getCodigoproduto() + "\n");
+            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().size(); j++) {
+                System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().get(j).getNome());
+                System.out.println(" preço: R$" + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().get(j).getValor());
+                System.out.println(" codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().get(j).getCodigoproduto() + "\n");
             }
             System.out.println("Adicionar ao Carrinho:");
             int escolhaProd = sc.nextInt();
             int j = escolhaProd - 1;
-            System.out.println("*O produto: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getNome() + " com o valor: R$"
-                    + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor() + " foi adicionado ao carrinho\n");
-            carrinho += negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor();
+            System.out.println("*O produto: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getNome() + " com o valor: R$"
+                    + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getValor() + " foi adicionado ao carrinho\n");
+            carrinho += negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getValor();
             String y;
             System.out.println("Adicinar mais Produtos ?");
             y = sc.next().toLowerCase();
@@ -257,5 +202,82 @@ public class ClienteApresentacao {
         } else {
             System.out.println("Digitou errado");
         }
+    }
+    //metodo de cadastro de cliente
+    public Endereco enderecoCliente() {
+    	System.out.println("*******************************Cadastrar Cliente*********************************\n");
+        System.out.println("------------------------------Endereco------------------------------------------\n");
+        System.out.println("Lugadouro: ");
+        String lugadouro = sc.next();
+        System.out.println("Numero: ");
+        String numero = sc.next();
+        System.out.println("Bairro: ");
+        String bairro = sc.next();
+        System.out.println("Cidade: ");
+        String cidade = sc.next();
+        System.out.println("Estado: ");
+        String estado = sc.next();
+        System.out.println("CEP: ");
+        String cep = sc.next();
+        cep = negocioendereco.validarCEP(cep);//vai validar o cep e retornar corrigido
+        Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
+        return endereco;
+    }
+    
+    // metodo cadastra o dados do cliente 
+    public void dadosCliente() {
+    	System.out.println("\n----------------------------------Dados Cliente-----------------------------------");
+        sc.nextLine();
+        System.out.println("Nome: ");
+        String nome = sc.nextLine();
+        System.out.println("Data de nascimento: ");
+        String data = negociopessoa.validarDataNascimento(sc.next());
+        System.out.println("CPF: ");
+        String cpf = negociopessoa.validarCPF(sc.next());
+        System.out.println("Senha: ");
+        String senha = sc.next();
+    }
+    //metodo cadastra o carao do cliente 
+    public Cartao cadastroCartao() {
+    	System.out.println("deseja cadastrar o cartão? ");
+        String opc = sc.next().toLowerCase();
+        System.out.println("\n----------------------------------Dados Cartão-----------------------------------");
+        sc.nextLine();
+        System.out.println("Nome do Titular do Cartao: ");
+        String nometitular = sc.nextLine();
+        System.out.println("Número do Cartão: ");
+        String numerocartao = sc.next();
+        numerocartao = negociocartao.validarNumero(numerocartao);//vai validar o numero e retornar corrigido
+        System.out.println("data de validade: ");
+        String datavalidade = sc.next();
+        datavalidade = negociocartao.validarDatadeValidade(datavalidade);//vai validar a data e retornar corrigido
+        System.out.println("código de segurança: ");
+        int codigoseguranca = sc.nextInt();
+        codigoseguranca = negociocartao.validarCodigoDeSeguranca(codigoseguranca);//vai validar o codigo e retornar corrigido
+        System.out.println("Limite: ");
+        double limite = sc.nextDouble();
+        Cartao cartao = new Cartao(nometitular, numerocartao, datavalidade, codigoseguranca, limite);
+        return cartao;
+}
+    //metodo para criar  cliente 
+    public Cliente criarCliente() {
+    	 System.out.println("\n----------------------------------Cadeastra Cliente-----------------------------------");
+    	 System.out.println("Nome: ");
+         String nome = sc.nextLine();
+         System.out.println("Data de nascimento: ");
+         String data = sc.next();
+         System.out.println("CPF: ");
+         String cpf = sc.next();
+         System.out.println("Senha: ");
+         String senha = sc.next();
+         Endereco endereco = enderecoCliente();
+         System.out.println(" Deseja cadastra cartão ");
+         String opc = sc.next();
+         if(opc.equals("sim")) {
+        	 Cartao cartao = cadastroCartao();
+        	 return new Cliente(nome, cpf, data, cartao, endereco, senha);
+         }
+         return  new Cliente(nome, cpf, data, endereco, senha);
+         
     }
 }

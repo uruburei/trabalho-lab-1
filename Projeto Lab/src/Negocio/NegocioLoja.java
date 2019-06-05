@@ -42,7 +42,7 @@ public class NegocioLoja {
 	}
 
 	//validar cadastro da loja
-	public boolean CadstrarLoja(Loja loja) {
+	public boolean cadstrarLoja(Loja loja) {
 		dadosLoja.receberDadosLoja(loja);
 		return true;
 	}
