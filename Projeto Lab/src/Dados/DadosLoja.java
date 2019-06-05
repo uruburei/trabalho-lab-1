@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class DadosLoja {
-    private ArrayList<Loja> lojas = new ArrayList<Loja>(3);
+    private ArrayList<Loja> lojas = new ArrayList<>(3);
     private File file = new File("src/Loja.txt");
     public DadosLoja(){
         if (!file.exists()){
@@ -68,17 +68,17 @@ public class DadosLoja {
         produto3[1] = new Produtoo("galeto", 35, 4405);
         produto3[2] = new Produtoo("yaksoba", 45, 8505);
         
-        ArrayList<Produtoo> produto = null;
+        ArrayList<Produtoo> produto = new ArrayList<>();
         produto.add(produtoLojaMcDonald[0]);
         produto.add(produtoLojaMcDonald[1]);
         produto.add(produtoLojaMcDonald[2]);
         
-        ArrayList<Produtoo> produto2a = null;
+        ArrayList<Produtoo> produto2a = new ArrayList<>();
         produto2a.add(produto2[1]);
         produto2a.add(produto2[0]);
         produto2a.add(produto2[2]);
         
-        ArrayList<Produtoo> produto3a = null;
+        ArrayList<Produtoo> produto3a = new ArrayList<>();
         produto3a.add(produto3[1]);
         produto3a.add(produto3[0]);
         produto3a.add(produto3[2]);
