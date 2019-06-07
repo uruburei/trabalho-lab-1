@@ -53,12 +53,12 @@ public class Principal {
                 String menuLogin = sc.next();
 
                 if (menuLogin.equals("1")) {
-                    cliente.InterfaceDadosCliente(conta);
+                    cliente.interfaceDadosCliente(conta);
                     System.out.println("----------------------------------------------");
                     System.out.println("1-Alterar dados\n2-Remover conta\n3-Voltar");
                     String menuConta = sc.next();
                     if (menuConta.equals("1")) {
-                        cliente.AlterarDados(conta);
+                        cliente.alterarDados(conta);
                     } else if (menuConta.equals("2")) {
                         cliente.removerDados();
                         break;
@@ -70,7 +70,7 @@ public class Principal {
                 }
             }
         } else if (opLogin.equals("2")) {
-            cliente.CadastrarCliente();
+            cliente.cadastrarCliente();
         } else {
             System.out.println("Digitou errado");
         }
@@ -100,7 +100,7 @@ public class Principal {
             }
             } else if (opLogin.equals("2")) {
                 sc.nextLine();
-                empresa.CadastrarLoja();
+                empresa.cadastrarLoja();
             }
     }
     	

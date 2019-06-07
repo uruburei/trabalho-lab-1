@@ -117,11 +117,11 @@ public class CLoginLoja {
     @FXML
     private Button btnClienteDados;
 
-    @FXML
-    void logarClienteFim(ActionEvent event) {
-        System.out.println("tste");
-        Loja loja = new Loja(Nome.getText(), CNPJ.getText(), Data.getText(), endereco);
-        negocioLoja.CadstrarLoja(loja);
-        negocioLoja.getDadosLoja().atualizarArquivo();
-    }
+//    @FXML
+//    void logarClienteFim(ActionEvent event) {
+//        System.out.println("tste");
+//        Loja loja = new Loja(Nome.getText(), CNPJ.getText(), Data.getText(), endereco);
+//        negocioLoja.CadstrarLoja(loja);
+//        negocioLoja.getDadosLoja().atualizarArquivo();
+//    }
 }

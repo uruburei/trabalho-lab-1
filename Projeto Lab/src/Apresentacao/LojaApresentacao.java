@@ -13,79 +13,12 @@ public class LojaApresentacao {
     private Scanner sc = new Scanner(System.in);
     public NegocioLoja negocioloja = new NegocioLoja();
     public NegocioEndereco negocioendereco = new NegocioEndereco();
+    
 
-    public void CadastrarLoja() {
-        System.out.println("------------------------------cadastro loja---------------------------------");
-        System.out.println("\n*************************Endereco*************************************");
+    public void cadastrarLoja() { 
+    	negocioloja.cadstrarLoja(criarLoja());
+       
 
-        System.out.println("Lugadouro: ");
-        String lugadouro = sc.nextLine();
-        System.out.println("Numero: ");
-        String numero = sc.next();
-        System.out.println("Bairro: ");
-        String bairro = sc.next();
-        System.out.println("Cidade: ");
-        String cidade = sc.next();
-        System.out.println("Estado: ");
-        String estado = sc.next();
-        System.out.println("CEP: ");
-        String cep = sc.next();
-        cep = negocioendereco.validarCEP(cep);//O metodo vai validar o cep e retorna corrigido
-
-        System.out.println("\n*************************Dados da Loja*************************************");
-        sc.nextLine();
-        System.out.println("Informe o nome da sua loja: ");
-        String nome = sc.nextLine();
-        System.out.println("informe o cnpj da loja: ");
-        String cnpj = sc.next();
-        cnpj = negocioloja.validarCNPJ(cnpj);//O metodo vai validar o cnpj e retornar corrigido
-        System.out.println("informe quando sua loja foi criada: ");
-        String data = sc.next();
-        data = negocioloja.validarDataCriacao(data);//O metodo vai validar a data e retornar corrigido
-        Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
-        Loja loja;
-
-        System.out.println("\n*************************cadastrar Produtos*************************************");
-        Produtoo [] produtoos = new Produtoo[3];
-        for (int i = 0; i < produtoos.length; i++) {
-            System.out.println("nome do produto: ");
-            String nomep = sc.next();
-            System.out.println("codigo do produto: ");
-            int codigop = sc.nextInt();
-            System.out.println("valor do produto: ");
-            double valorp = sc.nextDouble();
-            produtoos[i] = new Produtoo(nomep, valorp, codigop);
-            System.out.println("-----------------------------");
-        }
-
-        System.out.println("\n*************************Cadastrar Funcionarios*************************************");
-        ArrayList<Funcionario> funcionarios= new ArrayList<>();
-        for (int i = 0; i < 2; i++) {
-            sc.nextLine();
-            NegocioPessoa validarpessoa = new NegocioPessoa();
-            System.out.println("nome do funcionario: ");
-            String nomef = sc.nextLine();
-            System.out.println("cpf do funcionario: ");
-            String cpff = sc.next();
-            validarpessoa.validarCPF(cpff);
-            System.out.println("informe a data de nascimento do funcionario: ");
-            String dataf = sc.next();
-            validarpessoa.validarDataNascimento(dataf);
-            System.out.println("informe o setor do funcionario: ");
-            String setorf = sc.next();
-            System.out.println("informe o salario bruto do funcionario: ");
-            double salariof = sc.nextDouble();
-            System.out.println("informe quantos porcentos de imposto seram retirado do salario: ");
-            double impostof = sc.nextDouble();
-            if (setorf.equals("entregador")) {
-                funcionarios.add(new Entregador(nomef, cpff, dataf, salariof, impostof));
-            }else {
-                funcionarios.add(new Funcionario(nomef, cpff, dataf, setorf, salariof, impostof));
-            }
-        }
-        loja = new Loja(nome, cnpj, data, endereco,produtoos,funcionarios);
-
-        negocioloja.CadstrarLoja(loja);
     }
 
     public int logarLoja() {
@@ -111,10 +44,10 @@ public class LojaApresentacao {
         String opcprodutos = sc.next().toLowerCase();
         if (opcprodutos.equals("sim")) {
             System.out.println("-----------------------------------Dados Produtos--------------------------------------------\n");
-            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().length; j++) {
-                System.out.println("nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getNome() + "\n"
-                        + "preço: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getValor() + "\n"
-                        + "codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto()[j].getCodigoproduto() + "\n");
+            for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().size(); j++) {
+                System.out.println("nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getNome() + "\n"
+                        + "preço: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getValor() + "\n"
+                        + "codigo: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getCodigoproduto() + "\n");
             }
         }
         System.out.println("Deseja obter os dados dos seus funcionarios? ");
@@ -157,21 +90,21 @@ public class LojaApresentacao {
         String cep = sc.next();
         cep = negocioendereco.validarCEP(cep);//O metodo vai validar o cep e retornar corrigido
         Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
-        Produtoo [] proAnterior = negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto();
+        ArrayList<Produtoo> proAnterior = negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto();
         ArrayList<Funcionario> funcAnterior = negocioloja.getDadosLoja().lerDadosLoja().get(k).getFucionario();
         Loja loja = new Loja(nome, cnpj2, data, endereco,proAnterior,funcAnterior);
         System.out.println("Alterar produtos e funcionarios?");
         String opalterarPro = sc.next().toLowerCase();
         if (opalterarPro.equals("sim")) {
-            Produtoo [] produtoos = new Produtoo[3];
-            for (int i = 0; i < produtoos.length; i++) {
+            ArrayList<Produtoo> produtoos = new ArrayList<>();
+            for (int i = 0; i < 3; i++) {
                 System.out.println("nome do produto: ");
                 String nomep = sc.next();
                 System.out.println("codigo do produto: ");
                 int codigop = sc.nextInt();
                 System.out.println("valor do produto: ");
                 double valorp = sc.nextDouble();
-                produtoos[i] = new Produtoo(nomep, valorp, codigop);
+                produtoos.add(new Produtoo(nomep, valorp, codigop));
                 System.out.println("-----------------------------");
             }
             ArrayList<Funcionario> funcionarios= new ArrayList<>();
@@ -213,4 +146,105 @@ public class LojaApresentacao {
             System.out.println("Cancelando operação");
         }
     }
-}
+    
+    // metodo cadastra endereo
+    public Endereco cadastroEndereco(){
+    	 System.out.println("------------------------------cadastro loja---------------------------------");
+    	 System.out.println("\n*************************Endereco*************************************");
+
+         System.out.println("Lugadouro: ");
+         String lugadouro = sc.nextLine();
+         System.out.println("Numero: ");
+         String numero = sc.next();
+         System.out.println("Bairro: ");
+         String bairro = sc.next();
+         System.out.println("Cidade: ");
+         String cidade = sc.next();
+         System.out.println("Estado: ");
+         String estado = sc.next();
+         System.out.println("CEP: ");
+         String cep = sc.next();
+         cep = negocioendereco.validarCEP(cep);//O metodo vai validar o cep e retorna corrigido
+         Endereco endereco = new Endereco(lugadouro, cep, numero, bairro, cidade, estado);
+         return endereco;
+         
+    }
+    
+    // metodo para cadastra uma loja
+    public Loja criarLoja() {
+    	
+    	 System.out.println("\n*************************Dados da Loja*************************************");
+         sc.nextLine();
+         System.out.println("Informe o nome da sua loja: ");
+         String nome = sc.nextLine();
+         System.out.println("informe o cnpj da loja: ");
+         String cnpj = sc.next();
+         cnpj = negocioloja.validarCNPJ(cnpj);//O metodo vai validar o cnpj e retornar corrigido
+         System.out.println("informe quando sua loja foi criada: ");
+         String data = sc.next();
+         data = negocioloja.validarDataCriacao(data);//O metodo vai validar a data e retornar corrigido
+         Endereco endereco = cadastroEndereco();
+         ArrayList<Produtoo> produto = cadastroProdutos();
+         ArrayList<Funcionario> funcionario =  cadastroFuncionarios();
+         Loja loja =new Loja(nome, cnpj, data, endereco, produto, funcionario);
+         return loja;
+    }
+         
+        // metodo para cadastra produto
+       public ArrayList<Produtoo> cadastroProdutos() {
+    	   System.out.println("\n*************************cadastrar Produtos*************************************");
+           ArrayList<Produtoo> produto = new ArrayList<>();
+           for (int i = 0; i < 3; i++) {
+               System.out.println("nome do produto: ");
+               String nomep = sc.next();
+               System.out.println("codigo do produto: ");
+               int codigop = sc.nextInt();
+               System.out.println("valor do produto: ");
+               double valorp = sc.nextDouble();
+               produto.add(new Produtoo(nomep, valorp, codigop));
+               System.out.println("-----------------------------");
+           }
+    	   return produto;
+           
+       }
+       
+       // metodo para cadastra fucionario 
+       public ArrayList<Funcionario> cadastroFuncionarios() {
+    	   
+    	   System.out.println("\n*************************Cadastrar Funcionarios*************************************");
+           ArrayList<Funcionario> funcionarios= new ArrayList<>();
+           for (int i = 0; i < 2; i++) {
+               sc.nextLine();
+               NegocioPessoa validarpessoa = new NegocioPessoa();
+               System.out.println("nome do funcionario: ");
+               String nomef = sc.nextLine();
+               System.out.println("cpf do funcionario: ");
+               String cpff = sc.next();
+               validarpessoa.validarCPF(cpff);
+               System.out.println("informe a data de nascimento do funcionario: ");
+               String dataf = sc.next();
+               validarpessoa.validarDataNascimento(dataf);
+               System.out.println("informe o setor do funcionario: ");
+               String setorf = sc.next();
+               System.out.println("informe o salario bruto do funcionario: ");
+               double salariof = sc.nextDouble();
+               System.out.println("informe quantos porcentos de imposto seram retirado do salario: ");
+               double impostof = sc.nextDouble();
+               if (setorf.equals("entregador")) {
+                   funcionarios.add(new Entregador(nomef, cpff, dataf, salariof, impostof));
+               }else {
+                   funcionarios.add(new Funcionario(nomef, cpff, dataf, setorf, salariof, impostof));
+               }
+               
+           }
+//           loja = new Loja(nome, cnpj, data, endereco,produtoos,funcionarios);
+//
+//           negocioloja.CadstrarLoja(loja);
+           return funcionarios;
+      	
+      
+  }
+       }
+    	   
+       
+       
