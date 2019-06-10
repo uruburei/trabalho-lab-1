@@ -11,6 +11,11 @@ public class Produtoo implements Serializable {
 		this.valor = d;
 		this.codigoproduto = codigoproduto;
 	}
+	@Override
+	public String toString(){
+		return nome+" R$"+valor;
+	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}

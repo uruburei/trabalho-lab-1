@@ -71,6 +71,7 @@ public class Principal {
             }
         } else if (opLogin.equals("2")) {
             cliente.cadastrarCliente();
+            cliente.negociocliente.getDadoscliente().atualizarArquivo();
         } else {
             System.out.println("Digitou errado");
         }
@@ -101,6 +102,7 @@ public class Principal {
             } else if (opLogin.equals("2")) {
                 sc.nextLine();
                 empresa.cadastrarLoja();
+                empresa.negocioloja.getDadosLoja().atualizarArquivo();
             }
     }
     	

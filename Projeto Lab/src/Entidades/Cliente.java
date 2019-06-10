@@ -2,7 +2,7 @@ package Entidades;
 
 import java.io.Serializable;
 
-public class Cliente extends Pessoa implements Serializable, ClienteInterface {
+public class Cliente extends Pessoa implements Serializable {
     private Cartao cartao;
     private Endereco endereco;
     private String senha;

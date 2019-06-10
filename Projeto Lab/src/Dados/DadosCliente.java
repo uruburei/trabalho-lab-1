@@ -3,6 +3,7 @@ package Dados;
 import Entidades.Cartao;
 import Entidades.Cliente;
 import Entidades.Endereco;
+import Entidades.Produtoo;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 
 public class DadosCliente {
     private ArrayList<Cliente> clientes = new ArrayList<>();
+
     private File file = new File("src/Cliente.txt");
     public DadosCliente(){
         if (!file.exists()){

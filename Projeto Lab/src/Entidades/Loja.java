@@ -24,6 +24,11 @@ public class Loja implements Serializable {
 		this.fucionario = fucionario;
 	}
 
+	@Override
+	public String toString() {
+		return nome;
+	}
+
 	public String getNome() {
 		return nome;
 	}

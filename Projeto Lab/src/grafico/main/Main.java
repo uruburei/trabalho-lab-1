@@ -10,8 +10,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/grafico/view/Menu_Principal/MenuPrincipal.fxml"));
-        primaryStage.setTitle("Hello World");
+        Parent root = FXMLLoader.load(getClass().getResource("/grafico/view/Login_Cadastro/Main.fxml"));
+        primaryStage.setTitle("Food Planet");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         //  -- /grafico/view/Login_Cadastro/Main.fxml
