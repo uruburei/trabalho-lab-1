@@ -1,9 +1,11 @@
 package grafico.controllers.Login_Cadastro;
 
+import Apresentacao.ClienteApresentacao;
 import Entidades.Cartao;
 import Entidades.Cliente;
 import Entidades.Endereco;
 import Negocio.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -19,6 +22,7 @@ public class CLoginCliente {
     private NegocioEndereco negocioendereco = new NegocioEndereco();
     private NegocioPessoa negociopessoa = new NegocioPessoa();
     private NegocioCartao negociocartao = new NegocioCartao();
+    ClienteApresentacao clienteapre = new ClienteApresentacao();
     public Cliente cliente;public Endereco endereco;public Cartao cartao;
 
     @FXML
@@ -39,6 +43,8 @@ public class CLoginCliente {
     @FXML
     private Label CriarConta;
 
+    public static int i;
+
     private Parent fxml;
 
     @FXML
@@ -56,7 +62,16 @@ public class CLoginCliente {
     void logarCliente(ActionEvent event) {
         System.out.println(negociocliente.Verificarcliente(CPF.getText(),Senha.getText()));
         if (negociocliente.Verificarcliente(CPF.getText(),Senha.getText()) != null){
-            System.out.println("Entrar no programa");
+            i = clienteapre.logarCliente2(CPF.getText(),Senha.getText());
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/grafico/view/Menu_Principal/MenuPrincipal.fxml"));
+                Stage primaryStage = new Stage();
+                primaryStage.setTitle("Food Planet");
+                primaryStage.setScene(new Scene(root));
+                primaryStage.show();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
             LoginError.setVisible(false);
         }else {
             LoginError.setVisible(true);

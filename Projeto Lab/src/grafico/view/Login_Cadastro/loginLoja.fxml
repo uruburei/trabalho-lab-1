@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
 <VBox fx:id="PainelLoginLoja" alignment="CENTER" prefHeight="460.0" prefWidth="450.0" spacing="20.0" styleClass="telaLogin" stylesheets="@../../style/Teste.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafico.controllers.Login_Cadastro.CLoginLoja">
    <children>
-      <Label layoutX="83.0" layoutY="70.0" text="Logar na FoodPlanet" textFill="#3ab19b">
+      <Label layoutX="83.0" layoutY="70.0" text="Logar na FoodPlanet" textFill="#f86767">
          <font>
             <Font name="Malgun Gothic Bold" size="29.0" />
          </font>
@@ -39,7 +39,7 @@
             </Label>
          </children>
       </VBox>
-      <Button fx:id="btnLoginLoja" focusTraversable="false" layoutX="142.0" layoutY="342.0" onAction="#logarLoja" prefHeight="43.0" prefWidth="169.0" styleClass="btnLoginCliente" stylesheets="@../../style/Teste.css" text="Entrar" textFill="WHITE">
+      <Button fx:id="btnLoginLoja" focusTraversable="false" layoutX="142.0" layoutY="342.0" onAction="#logarLoja" prefHeight="43.0" prefWidth="169.0" styleClass="btnLoginCliente" stylesheets="@../../style/Teste.css" text="Entrar" textFill="#ebebeb">
          <font>
             <Font name="Microsoft Tai Le" size="15.0" />
          </font>

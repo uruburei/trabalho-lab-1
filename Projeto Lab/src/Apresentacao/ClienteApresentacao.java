@@ -32,7 +32,6 @@ public class ClienteApresentacao {
         }else {
            i= Integer.parseInt(j);
         }
-        System.out.println(i);
         return i ;
 	}
     
@@ -134,18 +133,18 @@ public class ClienteApresentacao {
         }
     }
     public void menuCompras() {
-        int i=0;
+        int k=0;
         double carrinho = 0;
         int menuCompra = 1;
         int tamanho1 = negocioloja.getDadosLoja().lerDadosLoja().size();
         while (menuCompra == 1) {
             System.out.println("----------------------Lojas--------------------------------");
-            for (i = 0; i < tamanho1; i++) {
+            for (int i = 0; i < tamanho1; i++) {
                 System.out.println((i + 1) + "-" + negocioloja.getDadosLoja().lerDadosLoja().get(i).getNome());
             }
             System.out.println("Imforme qual da Loja:");
             int nome = sc.nextInt();
-            int k = nome - 1;
+            k = nome - 1;
             System.out.println("-----------------------------------Produtos--------------------------------------------\n");
             for (int j = 0; j < negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().size(); j++) {
                 System.out.println((j + 1) + "-nome: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().get(j).getNome());
@@ -155,9 +154,9 @@ public class ClienteApresentacao {
             System.out.println("Adicionar ao Carrinho:");
             int escolhaProd = sc.nextInt();
             int j = escolhaProd - 1;
-            System.out.println("*O produto: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getNome() + " com o valor: R$"
-                    + negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getValor() + " foi adicionado ao carrinho\n");
-            carrinho += negocioloja.getDadosLoja().lerDadosLoja().get(i).getProduto().get(j).getValor();
+            System.out.println("*O produto: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().get(j).getNome() + " com o valor: R$"
+                    + negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().get(j).getValor() + " foi adicionado ao carrinho\n");
+            carrinho += negocioloja.getDadosLoja().lerDadosLoja().get(k).getProduto().get(j).getValor();
             String y;
             System.out.println("Adicinar mais Produtos ?");
             y = sc.next().toLowerCase();
@@ -173,29 +172,33 @@ public class ClienteApresentacao {
         finalizarCompra = sc.next();
         if (finalizarCompra.equals("1")) {
             int s = logarCliente();
-            double lim = negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().getLimite();
-            if (lim > carrinho) {
-                double returnlimite = lim - carrinho;
-                negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().setLimite(returnlimite);
-                System.out.println("O valor do carrinho é: R$" + carrinho);
-                String setor = "entregador";
-                int tamanho2 = negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
-                for (int j = 0; j < tamanho2; j++) {
-                    if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getSetor())) {
-                        System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getNome());
-                        break;
+            if(negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao() == null){
+                System.out.println("Não existe cartão registrado na sua conta");
+            }else {
+                double lim = negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().getLimite();
+                if (lim > carrinho) {
+                    double returnlimite = lim - carrinho;
+                    negociocliente.getDadoscliente().lerDadosCliente().get(s).getCartao().setLimite(returnlimite);
+                    System.out.println("O valor do carrinho é: R$" + carrinho);
+                    String setor = "entregador";
+                    int tamanho2 = negocioloja.getDadosLoja().lerDadosLoja().get(k).getFucionario().size();
+                    for (int j = 0; j < tamanho2; j++) {
+                        if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(k).getFucionario().get(j).getSetor())) {
+                            System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getFucionario().get(j).getNome());
+                            break;
+                        }
                     }
+                } else {
+                    System.out.println("Cartão não autorizado!");
                 }
-            } else {
-                System.out.println("Cartão não autorizado!");
             }
         } else if (finalizarCompra.equals("2")) {
             System.out.println("O valor do carrinho é: R$" + carrinho);
             String setor = "entregador";
-            int tamanho3=negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().size();
+            int tamanho3=negocioloja.getDadosLoja().lerDadosLoja().get(k).getFucionario().size();
             for (int j = 0; j < tamanho3; j++) {
-                if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getSetor())) {
-                    System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(i).getFucionario().get(j).getNome());
+                if (setor.equals(negocioloja.getDadosLoja().lerDadosLoja().get(k).getFucionario().get(j).getSetor())) {
+                    System.out.println("O produto será entregue por: " + negocioloja.getDadosLoja().lerDadosLoja().get(k).getFucionario().get(j).getNome());
                     break;
                 }
             }
@@ -279,5 +282,12 @@ public class ClienteApresentacao {
          }
          return  new Cliente(nome, cpf, data, endereco, senha);
          
+    }
+
+    //login do grafico
+    public int logarCliente2(String cpf,String senha) {
+        String j =  negociocliente.Verificarcliente(cpf, senha);
+        int i= Integer.parseInt(j);
+        return i ;
     }
 }

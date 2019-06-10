@@ -1,49 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="930.0" style="-fx-background-color: #CFE8DC;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafico.controllers.Menu_Principal.CMenuPrincipal">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafico.controllers.Menu_Principal.CMenuPrincipal">
    <children>
-      <AnchorPane layoutY="-1.0" prefHeight="601.0" prefWidth="141.0" style="-fx-background-color: #FFF;">
+      <ImageView fitHeight="535.0" fitWidth="753.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../img/asdasdasdasd.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="83.0" prefWidth="753.0" style="-fx-background-color: #b1b1b1;">
          <children>
-            <VBox layoutY="71.0" prefHeight="530.0" prefWidth="141.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0">
-               <children>
-                  <Label text="Lojas" textFill="#2e8318">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label text="Conta" textFill="#2e8318">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label text="Contato" textFill="#2e8318">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label text="Sair" textFill="#2e8318">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="20.0" top="10.0" />
-               </padding>
-            </VBox>
+            <JFXButton fx:id="btnCarrinho" alignment="CENTER" layoutX="639.0" layoutY="-1.0" onAction="#anchorCarrinho" prefHeight="90.0" prefWidth="114.0" style="-fx-background-color: #3f3d3d; -fx-background-radius: 0;" text="Carrinho" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Consolas Bold" size="14.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnLoja" layoutX="48.0" onAction="#anchorLoja" prefHeight="89.0" prefWidth="148.0" text="Lojas" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnConta" layoutX="267.0" onAction="#anchorConta" prefHeight="89.0" prefWidth="133.0" text="Conta" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnSair" layoutX="472.0" prefHeight="89.0" prefWidth="124.0" text="Sair" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="18.0" />
+               </font>
+            </JFXButton>
          </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </AnchorPane>
-      <ListView fx:id="ListaLojas" layoutX="193.0" layoutY="177.0" prefHeight="382.0" prefWidth="698.0" />
+      <AnchorPane fx:id="anchorMenu" layoutX="26.0" layoutY="138.0" prefHeight="371.0" prefWidth="701.0" />
    </children>
 </AnchorPane>
