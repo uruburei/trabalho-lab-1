@@ -70,16 +70,6 @@ public class CMenuPrincipal implements Initializable {
             ex.printStackTrace();
         }
     }
-    public void anchorConta(){
-
-        try {
-            fxml = FXMLLoader.load(getClass().getResource("/grafico/view/Menu_Principal/EnderecoAlt.fxml"));
-            anchorMenu.getChildren().removeAll();
-            anchorMenu.getChildren().setAll(fxml);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 
     public void sair(){
 

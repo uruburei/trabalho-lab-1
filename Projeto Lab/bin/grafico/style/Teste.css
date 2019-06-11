@@ -1,6 +1,5 @@
 .btnLoja,
 .btnCliente{
- -fx-background-color:transparent;
  -fx-border-color: #fff;
  -fx-border-radius: 50px;
  -fx-background-radius: 50px;
@@ -9,7 +8,7 @@
  -fx-background-color: #fff;
 }
 .btnLoginCliente{
- -fx-background-color: #f86767;
+ -fx-background-color: #3AB19B;
  -fx-background-radius: 50px;
 }
 .telaLogin{
