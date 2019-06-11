@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorCarrinho" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grafico.controllers.Menu_Principal.Ccarrinho">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="371.0" opacity="0.17" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" strokeWidth="5.0" width="701.0" />
+      <Label alignment="CENTER" layoutX="277.0" layoutY="24.0" prefHeight="25.0" prefWidth="148.0" text="Carrinho" textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="listCarrinho" depth="1" layoutX="51.0" layoutY="66.0" prefHeight="284.0" prefWidth="331.0" style="-fx-background-color: transparent;" verticalGap="10.0" />
+      <JFXButton fx:id="btnRemover" layoutX="496.0" layoutY="98.0" onAction="#removerCarrinho" prefHeight="46.0" prefWidth="124.0" style="-fx-background-color: #905353;" text="Remover" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnFinalizar" layoutX="492.0" layoutY="282.0" onAction="#FinalizarCompra" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #905353;" text="Finalizar compra" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXToggleButton fx:id="toggleCartao" layoutX="500.0" layoutY="224.0" prefHeight="46.0" prefWidth="117.0" text="Cartão" />
+      <Label fx:id="total" layoutX="505.0" layoutY="186.0" text="Total: " textFill="WHITE">
+         <font>
+            <Font name="Consolas Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="cartaofail" layoutX="483.0" layoutY="216.0" text="Cartão não autorizado" textFill="RED" visible="false">
+         <font>
+            <Font name="Consolas" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
